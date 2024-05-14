@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Korisnik\\source\\repos\\SkyRentifyAplikacija\\SkyRentifyAplikacija.csproj": {}
+    "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\SkyRentifyAplikacija.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Korisnik\\source\\repos\\SkyRentifyAplikacija\\SkyRentifyAplikacija.csproj": {
+    "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\SkyRentifyAplikacija.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Korisnik\\source\\repos\\SkyRentifyAplikacija\\SkyRentifyAplikacija.csproj",
+        "projectUniqueName": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\SkyRentifyAplikacija.csproj",
         "projectName": "SkyRentifyAplikacija",
-        "projectPath": "C:\\Users\\Korisnik\\source\\repos\\SkyRentifyAplikacija\\SkyRentifyAplikacija.csproj",
+        "projectPath": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\SkyRentifyAplikacija.csproj",
         "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Korisnik\\source\\repos\\SkyRentifyAplikacija\\obj\\",
+        "outputPath": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
