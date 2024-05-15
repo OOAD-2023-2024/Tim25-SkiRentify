@@ -5,10 +5,10 @@ namespace SkyRentifyAplikacija.Models
     public abstract class Oprema
     {
         [Key]
-        protected int Id { get; set; }
-        protected double cijena { get; set; }
-        protected string marka { get; set; }
-        protected string materijal { get; set; }
+        public int Id { get; set; }
+        public double cijena { get; set; }
+        public string marka { get; set; }
+        public string materijal { get; set; }
 
     }
 }
