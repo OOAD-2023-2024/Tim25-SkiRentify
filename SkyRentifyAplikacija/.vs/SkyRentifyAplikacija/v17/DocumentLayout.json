@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\models\\klijent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:models\\klijent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\models\\uposlenik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:models\\uposlenik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\models\\vlasnik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:models\\vlasnik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Uposlenik.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Uposlenik.cs",
+              "RelativeDocumentMoniker": "Models\\Uposlenik.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Uposlenik.cs",
+              "RelativeToolTip": "Models\\Uposlenik.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T14:18:23.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Vlasnik.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Vlasnik.cs",
+              "RelativeDocumentMoniker": "Models\\Vlasnik.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Vlasnik.cs",
+              "RelativeToolTip": "Models\\Vlasnik.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T14:18:17.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Klijent.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Klijent.cs",
+              "RelativeDocumentMoniker": "Models\\Klijent.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Klijent.cs",
+              "RelativeToolTip": "Models\\Klijent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T14:18:14.972Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
