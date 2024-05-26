@@ -22,6 +22,15 @@ namespace SkyRentifyAplikacija.Controllers
         {
             return View();
         }
+        public IActionResult Iznajmljivanje()
+        {
+            return View();
+        }
+
+        public IActionResult Servisiranje()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\SkyRentifyAplikacija.csproj": {}
+    "/Users/mina/Desktop/Tim25-SkiRentify/SkyRentifyAplikacija/SkyRentifyAplikacija.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\SkyRentifyAplikacija.csproj": {
+    "/Users/mina/Desktop/Tim25-SkiRentify/SkyRentifyAplikacija/SkyRentifyAplikacija.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\SkyRentifyAplikacija.csproj",
+        "projectUniqueName": "/Users/mina/Desktop/Tim25-SkiRentify/SkyRentifyAplikacija/SkyRentifyAplikacija.csproj",
         "projectName": "SkyRentifyAplikacija",
-        "projectPath": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\SkyRentifyAplikacija.csproj",
-        "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\obj\\",
+        "projectPath": "/Users/mina/Desktop/Tim25-SkiRentify/SkyRentifyAplikacija/SkyRentifyAplikacija.csproj",
+        "packagesPath": "/Users/mina/.nuget/packages/",
+        "outputPath": "/Users/mina/Desktop/Tim25-SkiRentify/SkyRentifyAplikacija/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/mina/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -69,10 +57,6 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[8.0.4, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[8.0.2, )"
             }
           },
           "imports": [
@@ -94,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -10,6 +10,9 @@ a.navbar-brand {
 a {
   color: #0077cc;
 }
+header {
+    background-color: #eb9234;
+}
 
 .btn-primary {
   color: #fff;
