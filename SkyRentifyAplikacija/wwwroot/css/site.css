@@ -28,3 +28,8 @@ body {
 footer {
     margin-top: auto;
 }
+
+.orange-text {
+    color: orange !important;
+    font-weight: bold;
+}

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us Page</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #1E90FF;
+            color: white;
+            border-radius: 15px; /* Zaobljenje ivica */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Dodavanje senke */
+        }
+
+        .partners-section {
+            padding: 30px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        .faq-section {
+            padding: 30px;
+            background-color: #6495ED;
+        }
+
+        .column {
+            flex: 1;
+            margin-bottom: 16px;
+            padding: 0 8px;
+            max-width: 33.3%;
+        }
+
+        .row {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 8px;
+            overflow: hidden; /* Osigurava da se slika neće iskriviti */
+        }
+
+            .card img {
+                width: 100%;
+                height: auto; /* Visina se automatski prilagođava širini */
+            }
+    </style>
+</head>
+<body>
+    <div class="about-section">
+        <h1>O nama</h1>
+        <p>
+            SkiRentify je web aplikacija koja omogućava iznajmljivanje i servisiranje skijaške opreme. Korisnici mogu pregledati dostupnu opremu,
+            odabrati odgovarajuću te izvršiti uplatu. Tako se osigurava olakšan proces dobivanja navedenih usluga bez
+            dugih redova čekanja u poslovnici.
+        </p>
+        <div class="row">
+            <h2 style="text-align:center">Naši partneri</h2>
+            <div class="column">
+                <div class="card">
+                    <div class="container">
+                        <img src="https://i.ibb.co/Bnpz0Cy/mckinley-logo.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="container">
+                        <img src="https://i.ibb.co/pfgCcfH/nordica-logo.png">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="container">
+                        <img src="https://i.ibb.co/SBtJw5H/salomon-logo.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Često postavljana pitanja</h2>
+            <details>
+                <summary>Kako mogu da ostvarim popust na odabranu opremu?</summary>
+                <p>Potrebno je da pri odabiru na koliko dana iznajmljujete opremu odabere preko 5 dana.</p>
+            </details>
+            <details>
+                <summary>Kako iznajmljujem opremu?</summary>
+                <p>Iznajmljivanje opreme je jednostavno. Odaberite željenu opremu, unesite podatke i izvršite uplatu dolaskom u poslovnicu.</p>
+            </details>
+            <!-- Dodati jos pitanja -->
+        </div>
+    </div>
+</body>
+</html>

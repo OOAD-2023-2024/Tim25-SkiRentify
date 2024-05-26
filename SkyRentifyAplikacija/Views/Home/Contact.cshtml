@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktivna mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #map {
+            height: 600px;
+        }
+
+        .contact-box {
+            position: absolute;
+            top: 90px;
+            right:130px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Kontakt informacije -->
+    <div class="contact-box">
+        <h2>Kontaktirajte nas</h2>
+        <p> Ukoliko imate bilo kakvih pitanja <br /> slobodno nas kontaktirajte</p>
+        <p>Telefon: +387 33 123 456</p>
+        <p>Email: info@skirentify.ba</p>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([43.84864, 18.35644], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.marker([43.84864, 18.35644]).addTo(map)
+            .bindPopup('SkiRentify poslovnica, Sarajevo')
+            .openPopup();
+    </script>
+</body>
+</html>
