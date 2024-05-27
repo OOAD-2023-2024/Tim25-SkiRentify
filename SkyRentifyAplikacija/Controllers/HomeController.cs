@@ -22,10 +22,11 @@ namespace SkyRentifyAplikacija.Controllers
         {
             return View();
         }
-        public IActionResult Iznajmljivanje()
+
+        /*public IActionResult Iznajmljivanje()
         {
             return View();
-        }
+        }*/
 
         public IActionResult Servisiranje()
         {
