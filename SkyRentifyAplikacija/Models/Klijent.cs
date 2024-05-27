@@ -7,6 +7,11 @@ namespace SkyRentifyAplikacija.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
+        [StringLength(maximumLength:15, MinimumLength=2, ErrorMessage="Ime mora imati" +
+            "između 2 i 15 znakova")]
+        [RegularExpression(@"|a-z|A-Z]*",ErrorMessage ="Dozvoljeno je samo korištenje " +
+            "velikih i malih slova!")]
         public string ime { get; set; }
         public string prezime { get; set; }
         public string brojTelefona { get; set; }
