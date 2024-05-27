@@ -12,6 +12,6 @@ namespace SkyRentifyAplikacija.Models
         public string brojTelefona { get; set; }
         public string email { get; set; }
         public double visina { get; set; }
-        public Vjestina nivoVjestine { get; set; }
+        [EnumDataType(typeof(Vjestina))] public Vjestina nivoVjestine { get; set; }
     }
 }

@@ -1,7 +1,14 @@
-﻿namespace SkyRentifyAplikacija.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SkyRentifyAplikacija.Models
 {
     public enum Vjestina
     {
-        POCETNIK,SREDNJI,NAPREDNI
+        [Display(Name = "Početnik")]
+        POCETNIK,
+        [Display(Name = "Srednji")]
+        SREDNJI,
+        [Display(Name = "Napredni")]
+        NAPREDNI
     }
 }
