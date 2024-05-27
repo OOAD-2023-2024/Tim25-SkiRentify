@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odabir Opreme</title>
     <style>
-        /* Dodaj CSS stilove ovdje */
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
@@ -165,6 +164,17 @@
 
     <script type="text/javascript">
         document.getElementById("nextBtn").addEventListener("click", function () {
+            var checkboxes = document.querySelectorAll('.checkbox');
+            var checked = false;
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    checked = true;
+                }
+            });
+            if (!checked) {
+                alert("Molimo označite barem jednu stavku prije nego što nastavite.");
+                return false;
+            }
             window.location.href = "/Iznajmljivanje/FormiranjeZahtjeva";
         });
     </script>

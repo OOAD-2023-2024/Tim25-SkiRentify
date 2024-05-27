@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formiranje zahtjeva</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        input, select {
+            width: 100%; 
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        #ime, #prezime, #broj_telefona, #email, #visina, #datumizdavanja, #datumzavrsetka,#vjestina {
+            width: calc(100% - 55px); 
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 500px;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top:25px;
+            background-color: rgba(255, 255, 255, 0.7); /* Prozirna bijela pozadina */
+        }
+
+        label {
+            margin-bottom: 10px;
+            color:darkorange;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .dalje-button {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+            .dalje-button button {
+                background-color: darkorange;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 200px;
+            }
+
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+            select::after {
+                content: '\25BC';
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                pointer-events: none;
+            }
+
+        option {
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Formiranje zahtjeva</h1>
+    <form action="#" method="post" id="formaUnosa"> <!--ovdje za akciju treba navesti gdje ce se podaci poslati-->
+        <label for="ime">Unesite sljedeće podatke:</label>
+        <input type="text" id="ime" name="ime" placeholder="Ime" required>
+
+        <input type="text" id="prezime" name="prezime" placeholder="Prezime" required>
+
+        <input type="text" id="broj_telefona" name="broj_telefona" placeholder="Broj telefona" required>
+
+        <input type="text" id="email" name="email" placeholder="Email" required>
+
+
+        <input type="text" id="visina" name="visina" placeholder="Visina (u cm)" required>
+
+        <label for="vjestina">Nivo vještine:</label>
+        <select id="vjestina" name="vjestina" required>
+            @foreach (var item in ViewBag.VjestinaTipovi)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+
+
+        <input type="date" id="datumizdavanja" name="datumizdavanja" placeholder="Datum izdavanja usluge" required>
+
+        <input type="date" id="datumzavrsetka" name="datumzavrsetka" placeholder="Datum završetka usluge" required>
+    </form>
+    <div class="dalje-button">
+        <button id="daljeBtn">Idi na plaćanje</button>
+    </div>
+
+    <script>
+        //provjeravam validnost polja
+
+        /*function provjeriPolje(polje) {
+            if (!polje.checkValidity()) {
+                switch (polje.id) {
+                    case 'ime':
+                        if (polje.value.charAt(0)='a' && polje.value != "") {
+                            alert("Ime mora početi velikim slovom.");
+                        } else if (!/^[A-Za-zČĆŽŠĐčćžšđ]+$/.test(polje.value) && polje.value != "") {
+                            alert("Ime ne smije sadržavati brojeve ili posebne znakove.");
+                        } else if (polje.value == "") {
+                            alert("Molimo vas da unesete ime.");
+                        }
+                        break;
+                    case 'prezime':
+                        if (!/^[A-ZČĆŽŠĐ][a-zčćžšđ]*$/.test(polje.value) && polje.value!="") {
+                            alert("Prezime mora početi velikim slovom.");
+                        }
+                        else if (/[\d]/.test(polje.value)) {
+                            alert("Prezime ne smije sadržavati brojeve.");
+                        } else {
+                            alert("Molimo vas da unesete prezime.");
+                        }
+                        break;
+                    case 'broj_telefona':
+                        alert("Molimo vas da unesete ispravan broj telefona.");
+                        break;
+                    case 'email':
+                        alert("Molimo vas da unesete ispravnu email adresu.");
+                        break;
+                    case 'visina':
+                        alert("Molimo vas da unesete ispravnu visinu.");
+                        break;
+                    case 'datumizdavanja':
+                        var datumIzdavanja = new Date(polje.value);
+                        var trenutniDatum = new Date();
+                        if (datumIzdavanja <= trenutniDatum) {
+                            alert("Datum izdavanja usluge mora biti u budućnosti.");
+                        } else {
+                            alert("Molimo vas da unesete datum izdavanja usluge.");
+                        }
+                        break;
+                    case 'datumzavrsetka':
+                        var datumZavrsetka = new Date(polje.value);
+                        var trenutniDatum = new Date();
+                        if (datumZavrsetka <= trenutniDatum) {
+                            alert("Datum završetka usluge mora biti u budućnosti.");
+                        } else {
+                            alert("Molimo vas da unesete datum završetka usluge.");
+                        }
+                        break;
+                    default:
+                        alert("Molimo vas da popunite sva obavezna polja.");
+                }
+                return false; // Vraća se false jer polje nije valjano
+            }
+            return true; // Vraća se true ako je polje valjano
+        }
+
+        function provjeriValjanostForme() {
+            var form = document.getElementById('formaUnosa');
+            var polja = form.getElementsByTagName('input');
+            // Iteriranje kroz sva polja forme
+            for (var i = 0; i < polja.length; i++) {
+                if (!provjeriPolje(polja[i])) {
+                    return false;
+                }
+            }
+            return true;
+        }*/
+
+        document.getElementById('daljeBtn').addEventListener('click', function () {
+            var form = document.getElementById('formaUnosa');
+            if (form.checkValidity()) {
+                window.location.href = "link_ka_stranici_placanja"; //na placanje otici
+            }else 
+            {
+                alert("Molimo Vas unesite sve podatke.")
+            }
+        });
+    </script>
+</body>
+</html>

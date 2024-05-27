@@ -21,7 +21,4 @@
   <ItemGroup>
     <None Remove="Views\Iznajmljivanje\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Iznajmljivanje\" />
-  </ItemGroup>
 </Project>
