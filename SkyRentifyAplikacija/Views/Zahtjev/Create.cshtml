@@ -4,58 +4,74 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<style>
+    .form-control::placeholder {
+        color: #495057; /* Boja teksta placeholder-a */
+    }
+</style>
 
-<h4>Zahtjev</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="datumPodnosenjaZahtjeva" class="control-label"></label>
-                <input asp-for="datumPodnosenjaZahtjeva" class="form-control" />
-                <span asp-validation-for="datumPodnosenjaZahtjeva" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="datumIzdavanjaUsluje" class="control-label"></label>
-                <input asp-for="datumIzdavanjaUsluje" class="form-control" />
-                <span asp-validation-for="datumIzdavanjaUsluje" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="datumZavrsetkaUsluge" class="control-label"></label>
-                <input asp-for="datumZavrsetkaUsluge" class="form-control" />
-                <span asp-validation-for="datumZavrsetkaUsluge" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="KlijentId" class="control-label"></label>
-                <select asp-for="KlijentId" class ="form-control" asp-items="ViewBag.KlijentId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="cijena" class="control-label"></label>
-                <input asp-for="cijena" class="form-control" />
-                <span asp-validation-for="cijena" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="popust" class="control-label"></label>
-                <input asp-for="popust" class="form-control" />
-                <span asp-validation-for="popust" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="placeno" /> @Html.DisplayNameFor(model => model.placeno)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<form asp-action="Create" method="post" id="formaUnosa">
+    @Html.AntiForgeryToken()
+
+    <label for="ime">Unesite sljedeće podatke:</label>
+
+    @Html.LabelFor(model => model.klijent.ime)
+    @Html.EditorFor(model => model.klijent.ime, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.klijent.ime, "", new { @class = "text-danger" })
+
+    @Html.LabelFor(model => model.klijent.prezime)
+    @Html.EditorFor(model => model.klijent.prezime, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.klijent.prezime, "", new { @class = "text-danger" })
+
+    @Html.LabelFor(model => model.klijent.brojTelefona)
+    @Html.EditorFor(model => model.klijent.brojTelefona, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.klijent.brojTelefona, "", new { @class = "text-danger" })
+
+    @Html.LabelFor(model => model.klijent.email)
+    @Html.EditorFor(model => model.klijent.email, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.klijent.email, "", new { @class = "text-danger" })
+
+    @Html.LabelFor(model => model.klijent.visina)
+    @Html.EditorFor(model => model.klijent.visina, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.klijent.visina, "", new { @class = "text-danger" })
+
+    @Html.LabelFor(model => model.klijent.nivoVjestine)
+    @Html.DropDownListFor(model => model.klijent.nivoVjestine, (SelectList)ViewBag.VjestinaTipovi, new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => model.klijent.nivoVjestine, "", new { @class = "text-danger" })
+
+    @Html.EditorFor(model => model.datumIzdavanjaUsluge, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.datumIzdavanjaUsluge, "", new { @class = "text-danger" })
+
+    @Html.EditorFor(model => model.datumZavrsetkaUsluge, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.datumZavrsetkaUsluge, "", new { @class = "text-danger" })
+
+    <div class="dalje-button">
+        <button type="submit">Idi na plaćanje</button>
     </div>
-</div>
+</form>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<script>
+    document.getElementById('daljeBtn').addEventListener('click', function () {
+        var form = document.getElementById('formaUnosa');
+        if (form.checkValidity()) {
+            window.location.href = "link_ka_stranici_placanja"; //na placanje otici
+        } else {
+            alert("Molimo Vas unesite sve podatke.")
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var inputs = document.querySelectorAll(".form-control");
+
+        inputs.forEach(function (input) {
+            var label = document.querySelector("label[for='" + input.id + "']");
+            if (label) {
+                var displayName = label.textContent.trim();
+                input.placeholder = displayName;
+            }
+        });
+    });
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

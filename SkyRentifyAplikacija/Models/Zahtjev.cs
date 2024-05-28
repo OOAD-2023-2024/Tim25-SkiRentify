@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SkyRentifyAplikacija.Models
@@ -8,7 +9,7 @@ namespace SkyRentifyAplikacija.Models
         [Key]
         public int Id { get; set; }
         public DateTime datumPodnosenjaZahtjeva { get; set; }
-        public DateTime datumIzdavanjaUsluje { get; set; }
+        public DateTime datumIzdavanjaUsluge { get; set; }
         public DateTime datumZavrsetkaUsluge { get; set; }
 
         [ForeignKey("Klijent")]

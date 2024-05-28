@@ -36,6 +36,14 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "Zahtjev",
+    pattern: "Zahtjev/{controller=Zahtjev}/{action=Create}/{id?}");
+
+app.MapControllerRoute(
+    name: "Iznajmljivanje",
+    pattern: "Iznajmljivanje/{controller=Iznajmljivanje}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
