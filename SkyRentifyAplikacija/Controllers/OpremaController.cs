@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SkyRentifyAplikacija.Data;
+using SkyRentifyAplikacija.Models;
 
 namespace SkyRentifyAplikacija.Controllers
 {
@@ -13,6 +15,51 @@ namespace SkyRentifyAplikacija.Controllers
         public OpremaController(ApplicationDbContext context)
         {
             _context = context;
+        }
+
+        [HttpPost]
+        public IActionResult PrikazOpreme(string[] selectedItems)
+        {
+            var oprema = new List<Oprema>();
+
+            foreach (var item in selectedItems)
+            {
+                // Dohvatite tip opreme na temelju naziva
+                Type tipOpreme = Type.GetType("SkyRentifyAplikacija.Models." + item);
+
+                if (tipOpreme != null)
+                {
+                    // Dohvatite podatke iz baze koristeći naziv tabele
+                    if (item == "Skije")
+                    {
+                        var skije = _context.Skije.ToList();
+                        oprema.AddRange(skije);
+                    }
+                    else if (item == "Pancerice")
+                    {
+                        var pancerice = _context.Pancerice.ToList();
+                        oprema.AddRange(pancerice);
+                    }else if(item== "Kaciga")
+                    {
+                        var kacige = _context.Kaciga.ToList();
+                        oprema.AddRange(kacige);
+                    }else if (item == "Stapovi")
+                    {
+                        var stapovi = _context.Stapovi.ToList();
+                        oprema.AddRange(stapovi);
+                    }else if(item=="Snowboard")
+                    {
+                        var snowboard = _context.Snowboard.ToList();
+                        oprema.AddRange(snowboard);
+                    }else if(item=="SnowboardCipele")
+                    {
+                        var snowboardCipele = _context.SnowboardCipele.ToList();
+                        oprema.AddRange(snowboardCipele);
+                    }
+                }
+            }
+            // Ovdje generirajte partial view i proslijedite mu podatke
+            return PartialView("PrikazOpreme",oprema);
         }
 
         // GET: OpremaController

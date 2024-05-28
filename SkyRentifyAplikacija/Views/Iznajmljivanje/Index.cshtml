@@ -89,13 +89,17 @@
 </head>
 <body>
 
+    <form id="selectedItemsForm" action="/Oprema/PrikazOpreme" method="post">
+        <input id="selectedItemsInput" type="hidden" name="selectedItems" value="">
+    </form>
+
     <div class="equipment-selection">
         <div class="item">
             <img src="https://i.ibb.co/jJgFLgv/skije.jpg" alt="Skije">
             <div class="item-text">
                 <p class="tekst">Skije</p>
                 <div class="checkbox-container">
-                    <input type="checkbox" class="checkbox">
+                    <input type="checkbox" class="checkbox" value="Skije">
                     <label class="checkbox-label">Odaberite</label>
                 </div>
             </div>
@@ -106,7 +110,7 @@
             <div class="item-text">
                 <p class="tekst">Pancerice</p>
                 <div class="checkbox-container">
-                    <input type="checkbox" class="checkbox">
+                    <input type="checkbox" class="checkbox" value="Pancerice">
                     <label class="checkbox-label">Odaberite</label>
                 </div>
             </div>
@@ -117,7 +121,7 @@
             <div class="item-text">
                 <p class="tekst">Štapovi</p>
                 <div class="checkbox-container">
-                    <input type="checkbox" class="checkbox">
+                    <input type="checkbox" class="checkbox" value="Stapovi">
                     <label class="checkbox-label">Odaberite</label>
                 </div>
             </div>
@@ -128,7 +132,7 @@
             <div class="item-text">
                 <p class="tekst">Kaciga</p>
                 <div class="checkbox-container">
-                    <input type="checkbox" class="checkbox">
+                    <input type="checkbox" class="checkbox" value="Kaciga">
                     <label class="checkbox-label">Odaberite</label>
                 </div>
             </div>
@@ -139,7 +143,7 @@
             <div class="item-text">
                 <p class="tekst">Snowboard</p>
                 <div class="checkbox-container">
-                    <input type="checkbox" class="checkbox">
+                    <input type="checkbox" class="checkbox" value="Snowboard">
                     <label class="checkbox-label">Odaberite</label>
                 </div>
             </div>
@@ -150,7 +154,7 @@
             <div class="item-text">
                 <p class="tekst">Snowboard čizme</p>
                 <div class="checkbox-container">
-                    <input type="checkbox" class="checkbox">
+                    <input type="checkbox" class="checkbox" value="SnowboardCipele">
                     <label class="checkbox-label">Odaberite</label>
                 </div>
             </div>
@@ -165,16 +169,22 @@
     <script type="text/javascript">
         document.getElementById("nextBtn").addEventListener("click", function () {
             var checkboxes = document.querySelectorAll('.checkbox');
-            var checked = false;
+            var checkedItems = [];
             checkboxes.forEach(function (checkbox) {
                 if (checkbox.checked) {
-                    checked = true;
+                    checkedItems.push(checkbox.value);
                 }
             });
-            if (!checked) {
+
+            if (checkedItems.length === 0) {
                 alert("Molimo označite barem jednu stavku prije nego što nastavite.");
                 return false;
             }
+
+            document.getElementById("selectedItemsInput").value = checkedItems.join(',');
+            document.getElementById("selectedItemsForm").submit();
+
+            //var url = "/Iznajmljivanje/FormiranjeZahtjeva?checkedItems=" + checkedItems.join(',');
             window.location.href = "/Iznajmljivanje/FormiranjeZahtjeva";
         });
     </script>

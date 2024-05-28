@@ -1,0 +1,28 @@
+﻿@model List<SkyRentifyAplikacija.Models.Oprema>
+
+<div>
+    <h2>Popis opreme:</h2>
+    @if (Model != null && Model.Any())
+    {
+        <ul>
+            @foreach (var stavka in Model)
+            {
+                <li>
+                    <h3>@stavka.Id</h3>
+                    <ul>
+                        @foreach (var property in stavka.GetType().GetProperties())
+                        {
+                            <li>
+                                <strong>@property.Name:</strong> @property.GetValue(stavka)
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>Trenutno nema dostupne opreme.</p>
+    }
+</div>

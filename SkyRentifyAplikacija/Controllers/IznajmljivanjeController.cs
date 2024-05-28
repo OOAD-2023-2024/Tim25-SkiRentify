@@ -11,11 +11,17 @@ namespace SkyRentifyAplikacija.Controllers
             return View();
         }
 
-        public IActionResult FormiranjeZahtjeva()
+        public IActionResult FormiranjeZahtjeva()//string checkedItems)
         {
             //da preuzmem nivo vjestine
             var nivoVjestineTipovi = Enum.GetValues(typeof(Vjestina)).Cast<Vjestina>().ToList();
             ViewBag.VjestinaTipovi = new SelectList(nivoVjestineTipovi.Select(v => new { Id = (int)v, Name = v.ToString() }), "Id", "Name");
+            /*if (string.IsNullOrEmpty(checkedItems))
+            {
+                return BadRequest("Nije odabrana nijedna stavka opreme.");
+            }
+            var selectedItems = checkedItems.Split(',');
+            TempData["SelectedItems"] = selectedItems;*/
             return View();
         }
     }
