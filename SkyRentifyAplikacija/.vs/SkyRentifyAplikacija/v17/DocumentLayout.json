@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\controllers\\opremacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:controllers\\opremacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\oprema\\prikazopreme.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\oprema\\prikazopreme.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PrikazOpreme.cshtml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Oprema\\PrikazOpreme.cshtml",
+              "RelativeDocumentMoniker": "Views\\Oprema\\PrikazOpreme.cshtml",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Oprema\\PrikazOpreme.cshtml",
+              "RelativeToolTip": "Views\\Oprema\\PrikazOpreme.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-28T23:51:02.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OpremaController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\OpremaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OpremaController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\OpremaController.cs",
+              "RelativeToolTip": "Controllers\\OpremaController.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAswD4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T23:50:35.168Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

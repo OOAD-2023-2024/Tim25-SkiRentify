@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SkyRentifyAplikacija")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96c3a1c3079b44360d77a3fef5e789cac152bbbb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c91678e651f9551b0ba046c7fadeb51207061943")]
 [assembly: System.Reflection.AssemblyProductAttribute("SkyRentifyAplikacija")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SkyRentifyAplikacija")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
