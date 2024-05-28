@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SkyRentifyAplikacija.Data;
 using SkyRentifyAplikacija.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SkyRentifyAplikacija.Controllers
 {
@@ -59,8 +60,10 @@ namespace SkyRentifyAplikacija.Controllers
                     }
                 }
             }
-            // Ovdje generirajte partial view i proslijedite mu podatke
-            return PartialView("PrikazOpreme",oprema);
+            
+            return PartialView("PrikazOpreme", oprema);
+            //return RedirectToAction("FormiranjeZahtjeva", "Iznajmljivanje");
+            
         }
 
         // GET: OpremaController
