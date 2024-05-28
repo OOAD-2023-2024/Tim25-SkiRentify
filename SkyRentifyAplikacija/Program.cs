@@ -40,6 +40,18 @@ app.MapControllerRoute(
     pattern: "Zahtjev/{controller=Zahtjev}/{action=Create}/{id?}");
 
 app.MapControllerRoute(
+            name: "prikaz_opreme",
+            pattern: "/Oprema/PrikazOpreme",
+            defaults: new { controller = "Oprema", action = "PrikazOpreme" }
+        );
+
+app.MapControllerRoute(
+    name: "formiranje_zahtjeva",
+    pattern: "/Iznajmljivanje/FormiranjeZahtjeva",
+    defaults: new { controller = "Iznajmljivanje", action = "FormiranjeZahtjeva" }
+);
+
+app.MapControllerRoute(
     name: "Iznajmljivanje",
     pattern: "Iznajmljivanje/{controller=Iznajmljivanje}/{action=Index}/{id?}");
 

@@ -34,6 +34,7 @@ namespace SkyRentifyAplikacija.Controllers
                     {
                         var skije = _context.Skije.ToList();
                         oprema.AddRange(skije);
+                        Console.WriteLine(skije[0].duzina.ToString());
                     }
                     else if (item == "Pancerice")
                     {

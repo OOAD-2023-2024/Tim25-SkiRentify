@@ -40,6 +40,13 @@ namespace SkyRentifyAplikacija.Data
             modelBuilder.Entity<TipoviZahtjeva>().ToTable("TipoviZahtjeva");
             modelBuilder.Entity<Uposlenik>().ToTable("Uposlenik");
             modelBuilder.Entity<Vlasnik>().ToTable("Vlasnik");
+
+            //unosenje podataka za skije
+            modelBuilder.Entity<Skije>().HasData(
+                new Skije { Id = 1,cijena=20,marka="Atomic",materijal="Drvo",duzina=160,sirina=10 },
+                new Skije { Id = 2,cijena=30,marka="Salomon",materijal="Plastika",duzina=170,sirina=15 }             
+            );
+
             base.OnModelCreating(modelBuilder);
         }
     }
