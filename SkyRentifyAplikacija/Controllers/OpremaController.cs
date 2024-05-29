@@ -19,7 +19,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PrikazOpremeAsync(string[] selectedItems)
+        public async void PrikazOpremeAsync(string[] selectedItems)
         {
             var oprema = new List<Oprema>();
 
@@ -59,8 +59,9 @@ namespace SkyRentifyAplikacija.Controllers
                     }
                 }
             }
+            //pisanje opreme u txt fajl
             
-            return View("PrikazOpreme",oprema);
+            //return PartialView("PrikazOpreme",oprema);
             //return RedirectToAction("FormiranjeZahtjeva", "Iznajmljivanje");
             
         }
