@@ -60,7 +60,7 @@ namespace SkyRentifyAplikacija.Controllers
                 }
             }
             
-            return PartialView("PrikazOpreme", oprema);
+            return View("PrikazOpreme",oprema);
             //return RedirectToAction("FormiranjeZahtjeva", "Iznajmljivanje");
             
         }
