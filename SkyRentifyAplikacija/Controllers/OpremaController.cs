@@ -19,7 +19,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         [HttpPost]
-        public async void PrikazOpremeAsync(string[] selectedItems)
+        public async Task<IActionResult> PrikazOpremeAsync(string[] selectedItems)
         {
             var oprema = new List<Oprema>();
 
@@ -61,7 +61,10 @@ namespace SkyRentifyAplikacija.Controllers
             }
             //pisanje opreme u txt fajl
             
-            //return PartialView("PrikazOpreme",oprema);
+            return PartialView("PrikazOpreme",oprema);
+            /*zelim da mi unutar formiranjezahtjeva viewu budu dva partial viewa ovaj prikaz opreme
+             i zahtjev create i da u prikazopreme bude dohvacena oprema iz baze na osnovu onog sto je odabrano
+            unutar iznajmljivanje/index*/
             //return RedirectToAction("FormiranjeZahtjeva", "Iznajmljivanje");
             
         }

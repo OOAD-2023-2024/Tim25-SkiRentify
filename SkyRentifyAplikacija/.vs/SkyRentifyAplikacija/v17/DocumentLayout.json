@@ -64,7 +64,7 @@
               "RelativeDocumentMoniker": "Controllers\\OpremaController.cs",
               "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\OpremaController.cs",
               "RelativeToolTip": "Controllers\\OpremaController.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAYwD8AAAAOAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAAYwEEAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-29T12:15:31.665Z",
               "EditorCaption": ""
@@ -79,8 +79,7 @@
               "RelativeToolTip": "Views\\Iznajmljivanje\\FormiranjeZahtjeva.cshtml",
               "ViewState": "AQIAAGkAAAAAAAAAAAAAAGMAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-29T12:15:25.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-29T12:15:25.177Z"
             },
             {
               "$type": "Document",
@@ -92,8 +91,7 @@
               "RelativeToolTip": "Views\\Iznajmljivanje\\Index.cshtml",
               "ViewState": "AQIAAK4AAAAAAAAAAAAAAGYAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-29T12:15:16.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-29T12:15:16.865Z"
             }
           ]
         }
