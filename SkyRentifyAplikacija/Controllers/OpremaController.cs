@@ -19,7 +19,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         [HttpPost]
-        public IActionResult PrikazOpreme(string[] selectedItems)
+        public async Task<IActionResult> PrikazOpremeAsync(string[] selectedItems)
         {
             var oprema = new List<Oprema>();
 
@@ -33,29 +33,28 @@ namespace SkyRentifyAplikacija.Controllers
                     // Dohvatite podatke iz baze koristeći naziv tabele
                     if (item == "Skije")
                     {
-                        var skije = _context.Skije.ToList();
+                        var skije = await _context.Skije.ToListAsync();
                         oprema.AddRange(skije);
-                        Console.WriteLine(skije[0].duzina.ToString());
                     }
                     else if (item == "Pancerice")
                     {
-                        var pancerice = _context.Pancerice.ToList();
+                        var pancerice = await _context.Pancerice.ToListAsync();
                         oprema.AddRange(pancerice);
                     }else if(item== "Kaciga")
                     {
-                        var kacige = _context.Kaciga.ToList();
+                        var kacige = await _context.Kaciga.ToListAsync();
                         oprema.AddRange(kacige);
                     }else if (item == "Stapovi")
                     {
-                        var stapovi = _context.Stapovi.ToList();
+                        var stapovi = await _context.Stapovi.ToListAsync();
                         oprema.AddRange(stapovi);
                     }else if(item=="Snowboard")
                     {
-                        var snowboard = _context.Snowboard.ToList();
+                        var snowboard = await _context.Snowboard.ToListAsync();
                         oprema.AddRange(snowboard);
                     }else if(item=="SnowboardCipele")
                     {
-                        var snowboardCipele = _context.SnowboardCipele.ToList();
+                        var snowboardCipele = await _context.SnowboardCipele.ToListAsync();
                         oprema.AddRange(snowboardCipele);
                     }
                 }
