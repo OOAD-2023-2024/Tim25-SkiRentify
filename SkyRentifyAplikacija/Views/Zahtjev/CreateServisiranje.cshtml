@@ -1,0 +1,199 @@
+﻿@model SkyRentifyAplikacija.Models.Zahtjev
+
+@{
+    ViewData["Title"] = "CreateServisiranje";
+}
+
+<style>
+    .form-control::placeholder {
+        color: #495057; /* Boja teksta placeholder-a */
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    #ime, #prezime, #broj_telefona, #email, #visina, #datumizdavanja, #datumzavrsetka, #vjestina {
+        width: calc(100% - 55px);
+    }
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+        .form-container > div {
+            width: 48%;
+        }
+
+    form {
+        padding: 20px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    label {
+        margin-bottom: 10px;
+        color: darkorange;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        text-align: center;
+        color: white;
+        color: darkorange;
+    }
+
+    .dalje-button {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+        .dalje-button button {
+            background-color: darkorange;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 200px;
+        }
+
+    select {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        background-color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+        select::after {
+            content: '\25BC';
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+    option {
+        color: #666;
+    }
+
+</style>
+
+<form asp-action="Create" method="post" id="formaUnosa">
+    @Html.AntiForgeryToken()
+    <h4>Unesite sljedeće podatke: </h4>
+
+    @Html.ValidationSummary(true)
+    @Html.LabelFor(model => model.klijent.ime)
+    @Html.EditorFor(model => model.klijent.ime, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.klijent.ime, "", new { @class = "text-danger" })
+
+    @Html.ValidationSummary(true)
+    @Html.LabelFor(model => model.klijent.prezime)
+    @Html.EditorFor(model => model.klijent.prezime, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.klijent.prezime, "", new { @class = "text-danger" })
+
+    @Html.ValidationSummary(true)
+    @Html.LabelFor(model => model.klijent.brojTelefona)
+    @Html.EditorFor(model => model.klijent.brojTelefona, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.klijent.brojTelefona, "", new { @class = "text-danger" })
+
+    @Html.ValidationSummary(true)
+    @Html.LabelFor(model => model.klijent.email)
+    @Html.EditorFor(model => model.klijent.email, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.klijent.email, "", new { @class = "text-danger" })
+
+    @Html.ValidationSummary(true)
+    @Html.LabelFor(model => model.datumIzdavanjaUsluge)
+    @Html.EditorFor(model => model.datumIzdavanjaUsluge, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.datumIzdavanjaUsluge, "", new { @class = "text-danger" })
+
+    @Html.ValidationSummary(true)
+    @Html.LabelFor(model => model.datumZavrsetkaUsluge)
+    @Html.EditorFor(model => model.datumZavrsetkaUsluge, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.datumZavrsetkaUsluge, "", new { @class = "text-danger" })
+
+    <div class="dalje-button">
+        <button type="submit" id="daljeBtn">Idi na plaćanje</button>
+    </div>
+</form>
+
+<script>
+    /*document.getElementById('daljeBtn').addEventListener('submit', function () {
+        var form = document.getElementById('formaUnosa');
+        if (form.checkValidity()) {
+            window.location.href = "Home/Contact"; //na placanje otici
+        } else {
+            alert("Molimo Vas unesite sve podatke.")
+        }
+
+        //document.getElementById("formaUnosa").submit();
+    });*/
+    document.getElementById('daljeBtn').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevents the default form submission behavior
+        var form = document.getElementById('formaUnosa');
+        if (form.checkValidity()) {
+            // Serialize form data and pass it to the action method
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '@Url.Action("Create", "Zahtjev")'); // Adjust the URL if necessary
+            xhr.setRequestHeader("RequestVerificationToken", $('input[name="__RequestVerificationToken"]').val()); // Add anti-forgery token
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // Redirect to the desired location
+                    window.location.href = "Oprema/PrikazOpreme"; // Change the URL as needed
+                }
+            };
+            xhr.send(formData);
+        } else {
+            alert("Molimo Vas unesite sve podatke.")
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var inputs = document.querySelectorAll(".form-control");
+
+        inputs.forEach(function (input) {
+            var label = document.querySelector("label[for='" + input.id + "']");
+            if (label) {
+                var displayName = label.textContent.trim();
+                input.placeholder = displayName;
+            }
+        });
+    });
+</script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

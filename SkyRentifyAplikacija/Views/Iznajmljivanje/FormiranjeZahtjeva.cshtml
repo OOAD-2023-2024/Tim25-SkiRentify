@@ -105,8 +105,16 @@
     <h1>Formiranje zahtjeva</h1>
 
     <div class="form-container">
-        <div>
-            @await Html.PartialAsync("~/Views/Zahtjev/Create.cshtml")
+        <div id="partialViewContainer">
+            <!-- Ovdje će se dodati ili ukloniti partial view u zavisnosti od toga je li iznajmljivanje ili servisiranje-->
+            @if (ViewBag.Content == "iznajmljivanje")
+            {
+                @await Html.PartialAsync("~/Views/Zahtjev/Create.cshtml")
+            }
+            else if (ViewBag.Content == "servisiranje")
+            {
+                @await Html.PartialAsync("~/Views/Zahtjev/CreateServisiranje.cshtml")
+            }
         </div>
     </div>
 </body>

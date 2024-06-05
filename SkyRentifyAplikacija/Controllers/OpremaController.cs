@@ -14,43 +14,28 @@ namespace SkyRentifyAplikacija.Controllers
         private readonly ApplicationDbContext _context;
         private string listaSaZarezom;
         private string[] lista;
+        private TextFileHandler fileHandler;
+        private string putanjaOdabirIznajmljivanje = "Data/UpisaniOdabirIznajmljivanje.txt";
 
         public OpremaController(ApplicationDbContext context)
         {
             _context = context;
+            fileHandler = new TextFileHandler();
         }
 
         public ActionResult OdabraneOpcije(string[] selectedItems)
         {
-            var odabrano= selectedItems[0];
-            string putanja = "Data/UpisaniOdabirIznajmljivanje.txt";
-            // Upisivanje odabranog tipa zahtjeva u datoteku
-            System.IO.File.WriteAllText(putanja, string.Empty);
-
-            using (StreamWriter writer = System.IO.File.AppendText(putanja))
-            {
-                writer.WriteLine(odabrano);
-            }
+            var odabrano= selectedItems[0]; // Upisivanje odabranog tipa opreme u datoteku
+            fileHandler.WriteToFile(putanjaOdabirIznajmljivanje, odabrano);
             return RedirectToAction("FormiranjeZahtjeva", "Iznajmljivanje");
-        }
-
-        public void procitajFile()
-        {
-            string putanja = "Data/UpisaniOdabirIznajmljivanje.txt";
-            if (System.IO.File.Exists(putanja))
-            {
-                // Čitanje sadržaja datoteke
-                listaSaZarezom = System.IO.File.ReadAllText(putanja);
-            }
-            listaSaZarezom = listaSaZarezom.Substring(0, listaSaZarezom.Length - 2);
-            lista=listaSaZarezom.Split(",");
         }
 
         [HttpGet]
         public async Task<IActionResult> PrikazOpremeAsync(string[] selectedItems)
         {
             List<Oprema> oprema = new List<Oprema>();
-            procitajFile();
+            listaSaZarezom = fileHandler.ReadFromFile(putanjaOdabirIznajmljivanje);
+            lista = listaSaZarezom.Split(",");
 
             foreach (var item in lista)
             {
@@ -86,11 +71,8 @@ namespace SkyRentifyAplikacija.Controllers
                     }
                 }
             }        
-            return View("PrikazOpreme",oprema);
-            /*zelim da mi unutar formiranjezahtjeva viewu budu dva partial viewa ovaj prikaz opreme
-             i zahtjev create i da u prikazopreme bude dohvacena oprema iz baze na osnovu onog sto je odabrano
-            unutar iznajmljivanje/index*/
-            //return RedirectToAction("FormiranjeZahtjeva", "Iznajmljivanje");          
+            return View("PrikazOpreme",oprema); //ovdje treba u zavisnosti od toga je li servisiranje ili iznajmljivanje
+                                                //da vrati ili prikazopreme za iznajmlj ili prikaz za placanje
         }
 
         // GET: OpremaController

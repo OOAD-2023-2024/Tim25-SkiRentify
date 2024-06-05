@@ -14,28 +14,30 @@ namespace SkyRentifyAplikacija.Controllers
     public class ZahtjevController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private string tipZahtjeva; //odabrani zahtjevi
-        //ili samo iznajmljivanje ili servisiranje
-        private int[] opcija; //poliranje ili popravak vezova il skupa
+        private string tipZahtjeva; //da li je iznajmljivanje ili servisiranje
+        private string opcije; //poliranje ili popravak vezova il skupa 
+        private TextFileHandler fileHandler;
+        private string putanjaOpcijeServisiranja = "Data/UpisaniOpcijeServisiranja.txt";
+        private string putanjaTipZahtjeva = "Data/UpisaniTipZahtjeva.txt";
 
         public ZahtjevController(ApplicationDbContext context)
         {
             _context = context;
+            fileHandler = new TextFileHandler();
+        }
+
+        public ActionResult postaviOpcijeServisiranja(string[] selectedItems)
+        {
+            opcije = selectedItems[0];// Upisivanje odabranih servisa za zahtjev datoteku
+            fileHandler.WriteToFile(putanjaOpcijeServisiranja, opcije);
+            return RedirectToAction("FormiranjeZahtjeva", "Iznajmljivanje");
         }
 
         public ActionResult postaviTipZahtjeva(string selectedItem)
-        {
-
-            string putanja = "Data/UpisaniTipZahtjeva.txt";
-            // Upisivanje odabranog tipa zahtjeva u datoteku
-            System.IO.File.WriteAllText(putanja, string.Empty);
-
-            using (StreamWriter writer = System.IO.File.AppendText(putanja))
-            {
-                writer.WriteLine(selectedItem);
-            }
+        {          
+            fileHandler.WriteToFile(putanjaTipZahtjeva, selectedItem);// Upisivanje odabranog tipa zahtjeva u datoteku
             if (selectedItem.Equals("iznajmljivanje")) return RedirectToAction("OdabirIznajmljivanje", "Iznajmljivanje");
-            else return RedirectToAction("OdabirServisiranje", "Iznajmljivanje"); //ovdje dodat to za servisiranje view i controller
+            else return RedirectToAction("OdabirServisiranje", "Iznajmljivanje");
         }
 
         // GET: Zahtjev
@@ -64,16 +66,6 @@ namespace SkyRentifyAplikacija.Controllers
             return View(zahtjev);
         }
 
-        public void procitajFile()
-        {
-            string putanja = "Data/UpisaniTipZahtjeva.txt";
-            if (System.IO.File.Exists(putanja))
-            {
-                // Čitanje sadržaja datoteke
-                tipZahtjeva = System.IO.File.ReadAllText(putanja);
-            }
-        }
-
             // GET: Zahtjev/Create
             /*public IActionResult Create()
             {
@@ -88,6 +80,8 @@ namespace SkyRentifyAplikacija.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,datumPodnosenjaZahtjeva,datumIzdavanjaUsluge,datumZavrsetkaUsluge,KlijentId,klijent,cijena,popust,placeno")] Zahtjev zahtjev)
         {
+            tipZahtjeva= fileHandler.ReadFromFile(putanjaTipZahtjeva);
+            opcije=fileHandler.ReadFromFile(putanjaOpcijeServisiranja);
             if (ModelState.IsValid)
             {
                 _context.Add(zahtjev.klijent);
@@ -101,8 +95,6 @@ namespace SkyRentifyAplikacija.Controllers
                 await _context.SaveChangesAsync();
 
                 List<TipZahtjeva> sviTipoviZahtjeva = await _context.TipZahtjeva.ToListAsync();
-
-                procitajFile();
 
                 if (tipZahtjeva.Contains("iznajmljivanje"))
                 {
@@ -118,7 +110,8 @@ namespace SkyRentifyAplikacija.Controllers
                 }
                 else
                 {
-                    //sad provjera je li poliranje ili popravak vezova
+                    //sad provjera je li poliranje ili popravak vezova ili oboje
+                    //naci u bazi to sto treba azurirati cijenu zahtjeva onda napravit ono za medjutabelu i povezat ih
                 }
                 return RedirectToAction(nameof(Index));
             }
