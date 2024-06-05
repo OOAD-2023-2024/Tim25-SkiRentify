@@ -6,7 +6,12 @@ namespace SkyRentifyAplikacija.Controllers
 {
     public class IznajmljivanjeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult OdabirIznajmljivanje()
+        {
+            return View();
+        }
+
+        public IActionResult OdabirServisiranje()
         {
             return View();
         }
@@ -15,7 +20,7 @@ namespace SkyRentifyAplikacija.Controllers
         {
             
             var nivoVjestineTipovi = Enum.GetValues(typeof(Vjestina)).Cast<Vjestina>().ToList();
-            ViewBag.VjestinaTipovi = new SelectList(nivoVjestineTipovi.Select(v => new { Id = (int)v, Name = v.ToString() }), "Id", "Name");
+            ViewBag.VjestinaTipovi= new SelectList(nivoVjestineTipovi.Select(v => new { Id = (int)v, Name = v.ToString() }), "Id", "Name");
             return View();
         }
     }

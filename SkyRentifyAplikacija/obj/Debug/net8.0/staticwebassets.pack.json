@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\images\\plava-pozadina.jpg"
     },
     {
+      "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\wwwroot\\images\\skije.jpg",
+      "PackagePath": "staticwebassets\\images\\skije.jpg"
+    },
+    {
       "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

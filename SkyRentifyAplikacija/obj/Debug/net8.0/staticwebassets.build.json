@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tPdcfOxcv+DXFLzuPuLbOuqr+AbZyNmNDM6m/SbBPg4=",
+  "Hash": "wAwRIShKd2qSPXTB33uPFTWFORQkhoH1N4/qTHO91QA=",
   "Source": "SkyRentifyAplikacija",
   "BasePath": "_content/SkyRentifyAplikacija",
   "Mode": "Default",
@@ -1269,6 +1269,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\plava-pozadina.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\wwwroot\\images\\skije.jpg",
+      "SourceId": "SkyRentifyAplikacija",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\wwwroot\\",
+      "BasePath": "_content/SkyRentifyAplikacija",
+      "RelativePath": "images/skije.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\skije.jpg"
     },
     {
       "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\wwwroot\\js\\site.js",

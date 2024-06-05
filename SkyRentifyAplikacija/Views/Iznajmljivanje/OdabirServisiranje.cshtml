@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Odabir usluge</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .service-selection {
+            display: flex;
+            justify-content:center;
+            gap: 40px;
+            justify-items: center;
+            padding: 20px;
+        }
+
+        .item {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            max-width: 100%;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .item img {
+                max-width: 100%;
+                height: auto;
+            }
+
+        .item-text {
+            margin-top: 10px;
+            background-color: #F0F8FF;
+            height: 100px;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .checkbox-label {
+            font-size: 16px;
+        }
+
+        .tekst {
+            font-weight: bold;
+            color: darkorange;
+            margin-top: 10px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .next-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+            .next-button button {
+                background-color: darkorange;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 200px;
+            }
+    </style>
+</head>
+<body>
+    <div class="service-selection">
+        <div class="item">
+            <img src="https://i.ibb.co/MRd6s8V/popravakvezova.jpg" alt="Popravak vezova">
+            <div class="item-text">
+                <p class="tekst">Popravak vezova</p>
+                <div class="checkbox-container">
+                    <input type="checkbox" class="checkbox" value="Popravak vezova">
+                    <label class="checkbox-label">Odaberite</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="https://i.ibb.co/DG8cDFm/poliranjeskija.jpg" alt="Poliranje skija">
+            <div class="item-text">
+                <p class="tekst">Poliranje skija</p>
+                <div class="checkbox-container">
+                    <input type="checkbox" class="checkbox" value="Poliranje skija">
+                    <label class="checkbox-label">Odaberite</label>
+                </div>
+            </div>
+        </div>
+     </div>
+
+    <div class="next-button">
+        <button id="nextBtn">Dalje</button>
+    </div>
+</body>
+</html>
+

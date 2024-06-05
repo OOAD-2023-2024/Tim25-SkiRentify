@@ -37,14 +37,10 @@
 
         .form-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             width: 100%;
             margin-top:20px;
         }
-
-            .form-container > div {
-                width: 48%;
-            }
 
         form {
             padding: 20px;
@@ -111,9 +107,6 @@
     <div class="form-container">
         <div>
             @await Html.PartialAsync("~/Views/Zahtjev/Create.cshtml")
-        </div>
-        <div>
-            @await Html.PartialAsync("~/Views/Oprema/PrikazOpreme.cshtml")
         </div>
     </div>
 </body>

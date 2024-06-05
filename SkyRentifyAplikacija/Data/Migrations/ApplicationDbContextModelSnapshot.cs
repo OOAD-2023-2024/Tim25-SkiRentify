@@ -455,6 +455,48 @@ namespace SkyRentifyAplikacija.Data.Migrations
                         .HasColumnType("nvarchar(1)");
 
                     b.ToTable("Kaciga", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 4,
+                            cijena = 10.0,
+                            marka = "Atomic",
+                            materijal = "Drvo",
+                            velicina = "M"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            cijena = 15.0,
+                            marka = "Salomon",
+                            materijal = "Plastika",
+                            velicina = "L"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            cijena = 20.0,
+                            marka = "Fischer",
+                            materijal = "Drvo",
+                            velicina = "S"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            cijena = 25.0,
+                            marka = "Salomon",
+                            materijal = "Plastika",
+                            velicina = "M"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            cijena = 30.0,
+                            marka = "Atomic",
+                            materijal = "Drvo",
+                            velicina = "L"
+                        });
                 });
 
             modelBuilder.Entity("SkyRentifyAplikacija.Models.Pancerice", b =>
@@ -465,6 +507,40 @@ namespace SkyRentifyAplikacija.Data.Migrations
                         .HasColumnType("float");
 
                     b.ToTable("Pancerice", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 9,
+                            cijena = 10.0,
+                            marka = "Atomic",
+                            materijal = "Drvo",
+                            velicina = 40.0
+                        },
+                        new
+                        {
+                            Id = 10,
+                            cijena = 15.0,
+                            marka = "Salomon",
+                            materijal = "Plastika",
+                            velicina = 41.0
+                        },
+                        new
+                        {
+                            Id = 11,
+                            cijena = 20.0,
+                            marka = "Fischer",
+                            materijal = "Drvo",
+                            velicina = 42.0
+                        },
+                        new
+                        {
+                            Id = 12,
+                            cijena = 25.0,
+                            marka = "Salomon",
+                            materijal = "Plastika",
+                            velicina = 39.0
+                        });
                 });
 
             modelBuilder.Entity("SkyRentifyAplikacija.Models.Skije", b =>
@@ -478,26 +554,6 @@ namespace SkyRentifyAplikacija.Data.Migrations
                         .HasColumnType("float");
 
                     b.ToTable("Skije", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            cijena = 20.0,
-                            marka = "Atomic",
-                            materijal = "Drvo",
-                            duzina = 160.0,
-                            sirina = 10.0
-                        },
-                        new
-                        {
-                            Id = 2,
-                            cijena = 30.0,
-                            marka = "Salomon",
-                            materijal = "Plastika",
-                            duzina = 170.0,
-                            sirina = 15.0
-                        });
                 });
 
             modelBuilder.Entity("SkyRentifyAplikacija.Models.Snowboard", b =>
@@ -508,6 +564,48 @@ namespace SkyRentifyAplikacija.Data.Migrations
                         .HasColumnType("float");
 
                     b.ToTable("Snowboard", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 13,
+                            cijena = 10.0,
+                            marka = "Atomic",
+                            materijal = "Drvo",
+                            duzina = 160.0
+                        },
+                        new
+                        {
+                            Id = 14,
+                            cijena = 15.0,
+                            marka = "Salomon",
+                            materijal = "Plastika",
+                            duzina = 170.0
+                        },
+                        new
+                        {
+                            Id = 15,
+                            cijena = 20.0,
+                            marka = "Fischer",
+                            materijal = "Drvo",
+                            duzina = 180.0
+                        },
+                        new
+                        {
+                            Id = 16,
+                            cijena = 25.0,
+                            marka = "Salomon",
+                            materijal = "Plastika",
+                            duzina = 190.0
+                        },
+                        new
+                        {
+                            Id = 17,
+                            cijena = 30.0,
+                            marka = "Nordic",
+                            materijal = "Drvo",
+                            duzina = 200.0
+                        });
                 });
 
             modelBuilder.Entity("SkyRentifyAplikacija.Models.SnowboardCipele", b =>

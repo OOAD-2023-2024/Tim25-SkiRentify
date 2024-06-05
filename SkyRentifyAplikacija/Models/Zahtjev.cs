@@ -9,7 +9,9 @@ namespace SkyRentifyAplikacija.Models
         [Key]
         public int Id { get; set; }
         public DateTime datumPodnosenjaZahtjeva { get; set; }
+        [DisplayName("Datum izdavanja usluge")]
         public DateTime datumIzdavanjaUsluge { get; set; }
+        [DisplayName("Datum završetka usluge")]
         public DateTime datumZavrsetkaUsluge { get; set; }
 
         [ForeignKey("Klijent")]

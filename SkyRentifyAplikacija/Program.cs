@@ -36,8 +36,10 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "Zahtjev",
-    pattern: "Zahtjev/{controller=Zahtjev}/{action=Create}/{id?}");
+            name: "ZahtjevCreate",
+            pattern: "/Zahtjev/Create",
+            defaults: new { controller = "Zahtjev", action = "Create" }
+        );
 
 app.MapControllerRoute(
             name: "prikaz_opreme",
@@ -52,8 +54,14 @@ app.MapControllerRoute(
 );
 
 app.MapControllerRoute(
+    name: "formiranje_zahtjeva",
+    pattern: "/Iznajmljivanje/OdabirServisiranje",
+    defaults: new { controller = "Iznajmljivanje", action = "OdabirServisiranje" }
+);
+
+app.MapControllerRoute(
     name: "Iznajmljivanje",
-    pattern: "Iznajmljivanje/{controller=Iznajmljivanje}/{action=Index}/{id?}");
+    pattern: "Iznajmljivanje/{controller=Iznajmljivanje}/{action=OdabirIznajmljivanje}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

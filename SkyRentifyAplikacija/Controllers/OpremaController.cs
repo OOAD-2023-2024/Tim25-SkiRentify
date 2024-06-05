@@ -12,25 +12,52 @@ namespace SkyRentifyAplikacija.Controllers
 
         //dodani dio za dohvacanje iz baze 
         private readonly ApplicationDbContext _context;
+        private string listaSaZarezom;
+        private string[] lista;
 
         public OpremaController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        [HttpPost]
+        public ActionResult OdabraneOpcije(string[] selectedItems)
+        {
+            var odabrano= selectedItems[0];
+            string putanja = "Data/UpisaniOdabirIznajmljivanje.txt";
+            // Upisivanje odabranog tipa zahtjeva u datoteku
+            System.IO.File.WriteAllText(putanja, string.Empty);
+
+            using (StreamWriter writer = System.IO.File.AppendText(putanja))
+            {
+                writer.WriteLine(odabrano);
+            }
+            return RedirectToAction("FormiranjeZahtjeva", "Iznajmljivanje");
+        }
+
+        public void procitajFile()
+        {
+            string putanja = "Data/UpisaniOdabirIznajmljivanje.txt";
+            if (System.IO.File.Exists(putanja))
+            {
+                // Čitanje sadržaja datoteke
+                listaSaZarezom = System.IO.File.ReadAllText(putanja);
+            }
+            listaSaZarezom = listaSaZarezom.Substring(0, listaSaZarezom.Length - 2);
+            lista=listaSaZarezom.Split(",");
+        }
+
+        [HttpGet]
         public async Task<IActionResult> PrikazOpremeAsync(string[] selectedItems)
         {
-            var oprema = new List<Oprema>();
+            List<Oprema> oprema = new List<Oprema>();
+            procitajFile();
 
-            foreach (var item in selectedItems)
+            foreach (var item in lista)
             {
-                // Dohvatite tip opreme na temelju naziva
                 Type tipOpreme = Type.GetType("SkyRentifyAplikacija.Models." + item);
 
                 if (tipOpreme != null)
-                {
-                    // Dohvatite podatke iz baze koristeći naziv tabele
+                {               
                     if (item == "Skije")
                     {
                         var skije = await _context.Skije.ToListAsync();
@@ -58,15 +85,12 @@ namespace SkyRentifyAplikacija.Controllers
                         oprema.AddRange(snowboardCipele);
                     }
                 }
-            }
-            //pisanje opreme u txt fajl
-            
-            return PartialView("PrikazOpreme",oprema);
+            }        
+            return View("PrikazOpreme",oprema);
             /*zelim da mi unutar formiranjezahtjeva viewu budu dva partial viewa ovaj prikaz opreme
              i zahtjev create i da u prikazopreme bude dohvacena oprema iz baze na osnovu onog sto je odabrano
             unutar iznajmljivanje/index*/
-            //return RedirectToAction("FormiranjeZahtjeva", "Iznajmljivanje");
-            
+            //return RedirectToAction("FormiranjeZahtjeva", "Iznajmljivanje");          
         }
 
         // GET: OpremaController

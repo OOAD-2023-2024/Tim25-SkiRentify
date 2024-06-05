@@ -50,8 +50,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXpuYWptbGppdmFuamVcRm9ybWlyYW5qZVphaHRqZXZhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Iznajmljivanje/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXpuYWptbGppdmFuamVcSW5kZXguY3NodG1s
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Iznajmljivanje/OdabirIznajmljivanje.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXpuYWptbGppdmFuamVcT2RhYmlySXpuYWptbGppdmFuamUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Iznajmljivanje/OdabirServisiranje.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXpuYWptbGppdmFuamVcT2RhYmlyU2VydmlzaXJhbmplLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Oprema/PrikazOpreme.cshtml]
