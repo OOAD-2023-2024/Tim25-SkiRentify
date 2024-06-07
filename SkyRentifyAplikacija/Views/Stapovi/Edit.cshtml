@@ -1,0 +1,49 @@
+﻿@model SkyRentifyAplikacija.Models.Stapovi
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Stapovi</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="duzina" class="control-label"></label>
+                <input asp-for="duzina" class="form-control" />
+                <span asp-validation-for="duzina" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="cijena" class="control-label"></label>
+                <input asp-for="cijena" class="form-control" />
+                <span asp-validation-for="cijena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="marka" class="control-label"></label>
+                <input asp-for="marka" class="form-control" />
+                <span asp-validation-for="marka" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="materijal" class="control-label"></label>
+                <input asp-for="materijal" class="form-control" />
+                <span asp-validation-for="materijal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,42 @@
+﻿@model SkyRentifyAplikacija.Models.Pancerice
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Pancerice</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.velicina)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.velicina)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cijena)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cijena)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.marka)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.marka)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.materijal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.materijal)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

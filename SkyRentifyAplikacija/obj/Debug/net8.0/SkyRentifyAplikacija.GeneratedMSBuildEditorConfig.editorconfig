@@ -58,8 +58,48 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXpuYWptbGppdmFuamVcT2RhYmlyU2VydmlzaXJhbmplLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Kaciga/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2FjaWdhXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Kaciga/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2FjaWdhXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Kaciga/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2FjaWdhXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Kaciga/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2FjaWdhXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Kaciga/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2FjaWdhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Oprema/PrikazOpreme.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3ByZW1hXFByaWthek9wcmVtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Pancerice/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuY2VyaWNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Pancerice/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuY2VyaWNlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Pancerice/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuY2VyaWNlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Pancerice/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuY2VyaWNlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Pancerice/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuY2VyaWNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Shared/Error.cshtml]
@@ -72,6 +112,86 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Skije/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpamVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Skije/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpamVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Skije/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpamVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Skije/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpamVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Skije/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpamVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/SnowboardCipele/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU25vd2JvYXJkQ2lwZWxlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/SnowboardCipele/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU25vd2JvYXJkQ2lwZWxlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/SnowboardCipele/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU25vd2JvYXJkQ2lwZWxlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/SnowboardCipele/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU25vd2JvYXJkQ2lwZWxlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/SnowboardCipele/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU25vd2JvYXJkQ2lwZWxlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Snowboard/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU25vd2JvYXJkXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Snowboard/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU25vd2JvYXJkXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Snowboard/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU25vd2JvYXJkXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Snowboard/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU25vd2JvYXJkXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Snowboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU25vd2JvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Stapovi/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcG92aVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Stapovi/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcG92aVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Stapovi/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcG92aVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Stapovi/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcG92aVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Stapovi/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcG92aVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Korisnik/Documents/GitHub/Tim25-SkiRentify/SkyRentifyAplikacija/Views/Zahtjev/Create.cshtml]
