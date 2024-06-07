@@ -1,0 +1,196 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odabir Opreme</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .equipment-selection {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            justify-items: center;
+            padding: 20px;
+        }
+
+        .item {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            max-width: 100%;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .item img {
+                max-width: 100%;
+                height: auto;
+            }
+
+        .item-text {
+            margin-top: 10px;
+            background-color: #F0F8FF;
+            height: 100px;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .checkbox-label {
+            font-size: 16px;
+        }
+
+        .tekst {
+            font-weight: bold;
+            color: darkorange;
+            margin-top: 10px;
+        }
+
+        .next-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+            .next-button button {
+                background-color: darkorange;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 200px;
+            }
+    </style>
+</head>
+<body>
+
+    <form id="selectedItemsForm" action="/Home/OdabraneOpcije">
+        <input id="selectedItemsInput" type="hidden" name="selectedItems" value="">
+    </form>
+
+    <div class="equipment-selection">
+        <div class="item">
+            <img src="https://i.ibb.co/jJgFLgv/skije.jpg" alt="Skije">
+            <div class="item-text">
+                <p class="tekst">Skije</p>
+                <div class="checkbox-container">
+                    <input type="checkbox" class="checkbox" value="Skije">
+                    <label class="checkbox-label">Odaberite</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="https://i.ibb.co/7SHJBPn/pancerice.jpg" alt="Pancerice">
+            <div class="item-text">
+                <p class="tekst">Pancerice</p>
+                <div class="checkbox-container">
+                    <input type="checkbox" class="checkbox" value="Pancerice">
+                    <label class="checkbox-label">Odaberite</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="https://i.ibb.co/9cXyHLm/stapovi.jpg" alt="Štapovi">
+            <div class="item-text">
+                <p class="tekst">Štapovi</p>
+                <div class="checkbox-container">
+                    <input type="checkbox" class="checkbox" value="Stapovi">
+                    <label class="checkbox-label">Odaberite</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="https://i.ibb.co/WGNG5cD/kaciga.jpg" alt="Kaciga">
+            <div class="item-text">
+                <p class="tekst">Kaciga</p>
+                <div class="checkbox-container">
+                    <input type="checkbox" class="checkbox" value="Kaciga">
+                    <label class="checkbox-label">Odaberite</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="https://i.ibb.co/zGwCZ77/snowboard.png" alt="Snowboard">
+            <div class="item-text">
+                <p class="tekst">Snowboard</p>
+                <div class="checkbox-container">
+                    <input type="checkbox" class="checkbox" value="Snowboard">
+                    <label class="checkbox-label">Odaberite</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="https://i.ibb.co/6bH9W4m/snowboard-cizme.jpg" alt="Snowboard čizme">
+            <div class="item-text">
+                <p class="tekst">Snowboard čizme</p>
+                <div class="checkbox-container">
+                    <input type="checkbox" class="checkbox" value="SnowboardCipele">
+                    <label class="checkbox-label">Odaberite</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="next-button">
+        <button id="nextBtn">Dalje</button>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById("nextBtn").addEventListener("click", function () {
+            var checkboxes = document.querySelectorAll('.checkbox');
+            var checkedItems = [];
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    checkedItems.push(checkbox.value);
+
+                }
+            });
+
+            if (checkedItems.length === 0) {
+                alert("Molimo označite barem jednu stavku prije nego što nastavite.");
+                return false;
+            }
+
+            document.getElementById("selectedItemsInput").value = checkedItems;
+            document.getElementById("selectedItemsForm").submit();
+        });
+
+        document.getElementById("selectedItemsForm").addEventListener("submit", function (event) {
+            window.location.href = "/Zahtjev/Create";
+        });
+    </script>
+
+</body>
+</html>

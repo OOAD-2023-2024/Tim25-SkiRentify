@@ -42,30 +42,34 @@ app.MapControllerRoute(
         );
 
 app.MapControllerRoute(
+            name: "ZahtjevServis",
+            pattern: "/Zahtjev/CreateServis",
+            defaults: new { controller = "Zahtjev", action = "CreateServisiranje" }
+        );
+
+app.MapControllerRoute(
             name: "prikaz_opreme",
-            pattern: "/Oprema/PrikazOpreme",
-            defaults: new { controller = "Oprema", action = "PrikazOpreme" }
+            pattern: "/Zahtjev/PrikazOpreme/{zahtjevId}",
+            defaults: new { controller = "Zahtjev", action = "PrikazOpreme" }
         );
 
 app.MapControllerRoute(
     name: "formiranje_zahtjeva",
-    pattern: "/Iznajmljivanje/FormiranjeZahtjeva",
-    defaults: new { controller = "Iznajmljivanje", action = "FormiranjeZahtjeva" }
+    pattern: "OdabirServisiranje",
+    defaults: new { controller = "Home", action = "OdabirServisiranje" }
 );
 
 app.MapControllerRoute(
-    name: "formiranje_zahtjeva",
-    pattern: "/Iznajmljivanje/OdabirServisiranje",
-    defaults: new { controller = "Iznajmljivanje", action = "OdabirServisiranje" }
+    name: "iznajmljivanje",
+    pattern: "/OdabirIznajmljivanje",
+    defaults: new { controller = "Home", action = "OdabirIznajmljivanje" }
 );
 
-app.MapControllerRoute(
-    name: "Iznajmljivanje",
-    pattern: "Iznajmljivanje/{controller=Iznajmljivanje}/{action=OdabirIznajmljivanje}/{id?}");
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
+
 
 app.Run();

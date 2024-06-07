@@ -1,0 +1,122 @@
+﻿@model SkyRentifyAplikacija.Models.OpremaPrikazViewModel
+
+@{
+    ViewData["Title"] = "Odaberite Opreme";
+}
+
+<h2>Odaberite Opreme</h2>
+
+@if (Model.Skije.Any())
+{
+    <h3>Skije</h3>
+    <ul>
+        @foreach (var skija in Model.Skije)
+        {
+            <li>
+                @Html.ActionLink("Detalji", "Details", "Skije", new { id = skija.Id }, null) - @skija.GetType().Name
+                @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post))
+                {
+                    @Html.Hidden("zahtjevId", Model.ZahtjevId)
+                    @Html.Hidden("opremaId", skija.Id)
+                    <button type="submit">Odaberi</button>
+                }
+            </li>
+        }
+    </ul>
+}
+
+@if (Model.Pancerice.Any())
+{
+    <h3>Pancerice</h3>
+    <ul>
+        @foreach (var pancerica in Model.Pancerice)
+        {
+            <li>
+                @Html.ActionLink("Detalji", "Details", "Pancerice", new { id = pancerica.Id }, null) - @pancerica.GetType().Name
+                @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post))
+                {
+                    @Html.Hidden("zahtjevId", Model.ZahtjevId)
+                    @Html.Hidden("opremaId", pancerica.Id)
+                    <button type="submit">Odaberi</button>
+                }
+            </li>
+        }
+    </ul>
+}
+
+@if (Model.Kacige.Any())
+{
+    <h3>Kacige</h3>
+    <ul>
+        @foreach (var kaciga in Model.Kacige)
+        {
+            <li>
+                @Html.ActionLink("Detalji", "Details", "Kaciga", new { id = kaciga.Id }, null) - @kaciga.GetType().Name
+                @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post))
+                {
+                    @Html.Hidden("zahtjevId", Model.ZahtjevId)
+                    @Html.Hidden("opremaId", kaciga.Id)
+                    <button type="submit">Odaberi</button>
+                }
+            </li>
+        }
+    </ul>
+}
+
+@if (Model.Snowboard.Any())
+{
+    <h3>Snowboardi</h3>
+    <ul>
+        @foreach (var snowboard in Model.Snowboard)
+        {
+            <li>
+                @Html.ActionLink("Detalji", "Details", "Snowboard", new { id = snowboard.Id }, null) - @snowboard.GetType().Name
+                @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post))
+                {
+                    @Html.Hidden("zahtjevId", Model.ZahtjevId)
+                    @Html.Hidden("opremaId", snowboard.Id)
+                    <button type="submit">Odaberi</button>
+                }
+            </li>
+        }
+    </ul>
+}
+
+@if (Model.SnowboardCipele.Any())
+{
+    <h3>Snowboard Cipele</h3>
+    <ul>
+        @foreach (var snowboardcipele in Model.SnowboardCipele)
+        {
+            <li>
+                @Html.ActionLink("Detalji", "Details", "Snowboard", new { id = snowboardcipele.Id }, null) - @snowboardcipele.GetType().Name
+                @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post))
+                {
+                    @Html.Hidden("zahtjevId", Model.ZahtjevId)
+                    @Html.Hidden("opremaId", snowboardcipele.Id)
+                    <button type="submit">Odaberi</button>
+                }
+            </li>
+        }
+    </ul>
+}
+
+
+@if (Model.Stapovi.Any())
+{
+    <h3>Stapovi</h3>
+    <ul>
+        @foreach (var stapovi in Model.Stapovi)
+        {
+            <li>
+                @Html.ActionLink("Detalji", "Details", "Stapovi", new { id = stapovi.Id }, null) - @stapovi.GetType().Name
+                @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post))
+                {
+                    @Html.Hidden("zahtjevId", Model.ZahtjevId)
+                    @Html.Hidden("opremaId", stapovi.Id)
+                    <button type="submit">Odaberi</button>
+                }
+            </li>
+        }
+    </ul>
+}

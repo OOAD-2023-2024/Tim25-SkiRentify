@@ -1,7 +1,7 @@
 ﻿@model SkyRentifyAplikacija.Models.Zahtjev
 
 @{
-    ViewData["Title"] = "CreateServisiranje";
+    ViewData["Title"] = "Create";
 }
 
 <style>
@@ -107,7 +107,6 @@
     }
 
 </style>
-
 <form asp-action="Create" method="post" id="formaUnosa">
     @Html.AntiForgeryToken()
     <h4>Unesite sljedeće podatke: </h4>
@@ -143,41 +142,31 @@
     @Html.ValidationMessageFor(model => model.datumZavrsetkaUsluge, "", new { @class = "text-danger" })
 
     <div class="dalje-button">
-        <button type="submit" id="daljeBtn">Idi na plaćanje</button>
+        <button type="submit" value="Create" class="btn btn-primary">Idi na odabir opreme</button>
     </div>
 </form>
 
 <script>
-    /*document.getElementById('daljeBtn').addEventListener('submit', function () {
-        var form = document.getElementById('formaUnosa');
-        if (form.checkValidity()) {
-            window.location.href = "Home/Contact"; //na placanje otici
-        } else {
-            alert("Molimo Vas unesite sve podatke.")
-        }
-
-        //document.getElementById("formaUnosa").submit();
-    });*/
-    document.getElementById('daljeBtn').addEventListener('click', function (event) {
+    /*document.getElementById('daljeBtn').addEventListener('click', function (event) {
         event.preventDefault(); // Prevents the default form submission behavior
         var form = document.getElementById('formaUnosa');
         if (form.checkValidity()) {
             // Serialize form data and pass it to the action method
             var formData = new FormData(form);
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', '@Url.Action("Create", "Zahtjev")'); // Adjust the URL if necessary
+            xhr.open('POST', 'Url.Action("Create", "Zahtjev")'); // Adjust the URL if necessary
             xhr.setRequestHeader("RequestVerificationToken", $('input[name="__RequestVerificationToken"]').val()); // Add anti-forgery token
             xhr.onload = function () {
                 if (xhr.status === 200) {
                     // Redirect to the desired location
-                    window.location.href = "Oprema/PrikazOpreme"; // Change the URL as needed
+                    window.location.href = "Zahtjev/PrikazOpreme"; // Change the URL as needed
                 }
             };
             xhr.send(formData);
         } else {
             alert("Molimo Vas unesite sve podatke.")
         }
-    });
+    });*/
 
     document.addEventListener("DOMContentLoaded", function () {
         var inputs = document.querySelectorAll(".form-control");

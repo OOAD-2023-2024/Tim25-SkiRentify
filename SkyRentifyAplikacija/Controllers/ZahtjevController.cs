@@ -19,25 +19,12 @@ namespace SkyRentifyAplikacija.Controllers
         private TextFileHandler fileHandler;
         private string putanjaOpcijeServisiranja = "Data/UpisaniOpcijeServisiranja.txt";
         private string putanjaTipZahtjeva = "Data/UpisaniTipZahtjeva.txt";
+        private string putanjaOdabirIznajmljivanje = "Data/UpisaniOdabirIznajmljivanje.txt";
 
         public ZahtjevController(ApplicationDbContext context)
         {
             _context = context;
             fileHandler = new TextFileHandler();
-        }
-
-        public ActionResult postaviOpcijeServisiranja(string[] selectedItems)
-        {
-            opcije = selectedItems[0];// Upisivanje odabranih servisa za zahtjev datoteku
-            fileHandler.WriteToFile(putanjaOpcijeServisiranja, opcije);
-            return RedirectToAction("FormiranjeZahtjeva", "Iznajmljivanje");
-        }
-
-        public ActionResult postaviTipZahtjeva(string selectedItem)
-        {          
-            fileHandler.WriteToFile(putanjaTipZahtjeva, selectedItem);// Upisivanje odabranog tipa zahtjeva u datoteku
-            if (selectedItem.Equals("iznajmljivanje")) return RedirectToAction("OdabirIznajmljivanje", "Iznajmljivanje");
-            else return RedirectToAction("OdabirServisiranje", "Iznajmljivanje");
         }
 
         // GET: Zahtjev
@@ -67,18 +54,28 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
             // GET: Zahtjev/Create
-            /*public IActionResult Create()
+            public IActionResult Create()
             {
-                ViewData["KlijentId"] = new SelectList(_context.Klijent, "Id", "Id");
-                return View();
-            }*/
+            string tipZahtjeva = fileHandler.ReadFromFile(putanjaTipZahtjeva);
 
-            // POST: Zahtjev/Create
-            // To protect from overposting attacks, enable the specific properties you want to bind to.
-            // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            if (tipZahtjeva == "servisiranje")
+            {
+                // Show the CreateServisiranje view for service requests
+                return View("CreateServisiranje");
+            }
+            else
+            {
+                // Show the regular Create view for other requests (presumably rentals)
+                var nivoVjestineTipovi = Enum.GetValues(typeof(Vjestina)).Cast<Vjestina>().ToList();
+                ViewBag.VjestinaTipovi = new SelectList(nivoVjestineTipovi.Select(v => new { Id = (int)v, Name = v.ToString() }), "Id", "Name");
+                return View();
+            }
+        }
+
+        // POST: Zahtjev/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,datumPodnosenjaZahtjeva,datumIzdavanjaUsluge,datumZavrsetkaUsluge,KlijentId,klijent,cijena,popust,placeno")] Zahtjev zahtjev)
+        /*public async Task<IActionResult> Create([Bind("Id,datumPodnosenjaZahtjeva,datumIzdavanjaUsluge,datumZavrsetkaUsluge,KlijentId,klijent,cijena,popust,placeno")] Zahtjev zahtjev)
         {
             tipZahtjeva= fileHandler.ReadFromFile(putanjaTipZahtjeva);
             opcije=fileHandler.ReadFromFile(putanjaOpcijeServisiranja);
@@ -113,10 +110,74 @@ namespace SkyRentifyAplikacija.Controllers
                     //sad provjera je li poliranje ili popravak vezova ili oboje
                     //naci u bazi to sto treba azurirati cijenu zahtjeva onda napravit ono za medjutabelu i povezat ih
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("PrikazOpreme", new { zahtjevId = zahtjev.Id });
             }
-            ViewData["KlijentId"] = new SelectList(_context.Klijent, "Id", "Id", zahtjev.KlijentId);
+            //ViewData["KlijentId"] = new SelectList(_context.Klijent, "Id", "Id", zahtjev.KlijentId);
             return View(zahtjev);
+        }*/
+
+        public async Task<IActionResult> PrikazOpreme(int zahtjevId)
+        {
+            //prikaz opreme za iznajmljivanje koja je na pocetku odabrana
+            var odabranestavke=fileHandler.ReadFromFile(putanjaOdabirIznajmljivanje);
+            var odabranaLista= odabranestavke.Split(',').ToList();
+            var skije = new List<Skije>();
+            var kacige= new List<Kaciga>();
+            var pancerice = new List<Pancerice>();
+            var snowboard = new List<Snowboard>();
+            var snowboardCipele = new List<SnowboardCipele>();
+            var stapovi = new List<Stapovi>();
+            if (odabranaLista.Contains("Skije"))
+            {
+                skije= await _context.Skije.ToListAsync();
+            }
+            if (odabranaLista.Contains("Pancerice"))
+            {
+                pancerice = await _context.Pancerice.ToListAsync();
+            }
+            if(odabranaLista.Contains("Kaciga"))
+            {
+                kacige = await _context.Kaciga.ToListAsync();
+            }
+            if(odabranaLista.Contains("Stapovi"))
+            {
+                stapovi = await _context.Stapovi.ToListAsync();
+            }
+            if(odabranaLista.Contains("Snowboard"))
+            {
+                snowboard = await _context.Snowboard.ToListAsync();
+            }
+            if(odabranaLista.Contains("SnowboardCipele"))
+            {
+                snowboardCipele = await _context.SnowboardCipele.ToListAsync();
+            }
+            var viewModel = new OpremaPrikazViewModel
+            {
+                Skije = skije,
+                Pancerice = pancerice,
+                Snowboard = snowboard,
+                SnowboardCipele = snowboardCipele,
+                Stapovi = stapovi,
+                Kacige = kacige,
+                ZahtjevId = zahtjevId
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> OdaberiOpremu(int zahtjevId, int opremaId)
+        {
+            var stavkaZahtjeva = new StavkaZahtjeva
+            {
+                ZahtjevId = zahtjevId,
+                OpremaId = opremaId,
+            };
+
+            _context.StavkaZahtjeva.Add(stavkaZahtjeva);
+            await _context.SaveChangesAsync();
+
+            // Redirektuj nazad na prikaz opreme
+            return RedirectToAction("PrikazOpreme", new { zahtjevId });
         }
 
         // GET: Zahtjev/Edit/5
