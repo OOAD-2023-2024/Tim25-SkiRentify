@@ -6,7 +6,7 @@
 
 <style>
     .form-control::placeholder {
-        color: #495057; /* Boja teksta placeholder-a */
+        color: #495057;
     }
 
     body {
@@ -17,139 +17,106 @@
         background-size: cover;
     }
 
-    h1 {
+    h4 {
         text-align: center;
-        color: white;
-    }
-
-    input, select {
-        width: 100%;
-        padding: 5px;
-        margin-bottom: 10px;
-    }
-
-    #ime, #prezime, #broj_telefona, #email, #visina, #datumizdavanja, #datumzavrsetka, #vjestina {
-        width: calc(100% - 55px);
+        color: darkorange;
+        margin-top: 20px;
     }
 
     .form-container {
         display: flex;
         justify-content: center;
-        width: 100%;
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
-        .form-container > div {
-            width: 48%;
+        .form-container form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
         }
 
-    form {
-        padding: 20px;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.7);
+    .form-group {
+        margin-bottom: 15px;
     }
 
-    label {
-        margin-bottom: 10px;
+    .control-label {
         color: darkorange;
-        text-align: left;
         font-weight: bold;
     }
 
-    input {
+    .form-control {
         width: 100%;
-        padding: 5px;
-        margin-bottom: 10px;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
     }
 
-    h4 {
-        text-align: center;
+    .btn-primary {
+        background-color: darkorange;
         color: white;
-        color: darkorange;
-    }
-
-    .dalje-button {
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-        .dalje-button button {
-            background-color: darkorange;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 200px;
-        }
-
-    select {
-        width: 100%;
-        padding: 5px;
-        margin-bottom: 10px;
-        background-color: white;
+        padding: 10px 20px;
         border: none;
         border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
     }
 
-        select::after {
-            content: '\25BC';
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            pointer-events: none;
+        .btn-primary:hover {
+            background-color: orangered;
         }
 
-    option {
-        color: #666;
+    .text-danger {
+        color: red;
+        font-size: 12px;
     }
-
 </style>
-<form asp-action="Create" method="post" id="formaUnosa">
-    @Html.AntiForgeryToken()
-    <h4>Unesite sljedeće podatke: </h4>
 
-    @Html.ValidationSummary(true)
-    @Html.LabelFor(model => model.klijent.ime)
-    @Html.EditorFor(model => model.klijent.ime, new { htmlAttributes = new { @class = "form-control" } })
-    @Html.ValidationMessageFor(model => model.klijent.ime, "", new { @class = "text-danger" })
+<h4>Unesite sljedeće podatke:</h4>
 
-    @Html.ValidationSummary(true)
-    @Html.LabelFor(model => model.klijent.prezime)
-    @Html.EditorFor(model => model.klijent.prezime, new { htmlAttributes = new { @class = "form-control" } })
-    @Html.ValidationMessageFor(model => model.klijent.prezime, "", new { @class = "text-danger" })
-
-    @Html.ValidationSummary(true)
-    @Html.LabelFor(model => model.klijent.brojTelefona)
-    @Html.EditorFor(model => model.klijent.brojTelefona, new { htmlAttributes = new { @class = "form-control" } })
-    @Html.ValidationMessageFor(model => model.klijent.brojTelefona, "", new { @class = "text-danger" })
-
-    @Html.ValidationSummary(true)
-    @Html.LabelFor(model => model.klijent.email)
-    @Html.EditorFor(model => model.klijent.email, new { htmlAttributes = new { @class = "form-control" } })
-    @Html.ValidationMessageFor(model => model.klijent.email, "", new { @class = "text-danger" })
-
-    @Html.ValidationSummary(true)
-    @Html.LabelFor(model => model.datumIzdavanjaUsluge)
-    @Html.EditorFor(model => model.datumIzdavanjaUsluge, new { htmlAttributes = new { @class = "form-control" } })
-    @Html.ValidationMessageFor(model => model.datumIzdavanjaUsluge, "", new { @class = "text-danger" })
-
-    @Html.ValidationSummary(true)
-    @Html.LabelFor(model => model.datumZavrsetkaUsluge)
-    @Html.EditorFor(model => model.datumZavrsetkaUsluge, new { htmlAttributes = new { @class = "form-control" } })
-    @Html.ValidationMessageFor(model => model.datumZavrsetkaUsluge, "", new { @class = "text-danger" })
-
-    <div class="dalje-button">
-        <button type="submit" value="Create" class="btn btn-primary">Idi na odabir opreme</button>
-    </div>
-    <!--ovdje dodat ono idi na placanje i da prosljedjuje zahtjevid prema njemu i nalazi se u zahtjev controleru simularcija-->
-    <!--ima httpget i httppost zahtjev procesplacanja i model za placanje-->
-</form>
+<div class="form-container">
+    <form asp-action="Create" method="post" id="formaUnosa">
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <label asp-for="klijent.ime" class="control-label"></label>
+            <input asp-for="klijent.ime" class="form-control" placeholder="Unesite ime" />
+            <span asp-validation-for="klijent.ime" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="klijent.prezime" class="control-label"></label>
+            <input asp-for="klijent.prezime" class="form-control" placeholder="Unesite prezime" />
+            <span asp-validation-for="klijent.prezime" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="klijent.brojTelefona" class="control-label"></label>
+            <input asp-for="klijent.brojTelefona" class="form-control" placeholder="Unesite broj telefona" />
+            <span asp-validation-for="klijent.brojTelefona" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="klijent.email" class="control-label"></label>
+            <input asp-for="klijent.email" class="form-control" placeholder="Unesite email" />
+            <span asp-validation-for="klijent.email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="datumIzdavanjaUsluge" class="control-label"></label>
+            <input asp-for="datumIzdavanjaUsluge" class="form-control" placeholder="Unesite datum izdavanja usluge" />
+            <span asp-validation-for="datumIzdavanjaUsluge" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="datumZavrsetkaUsluge" class="control-label"></label>
+            <input asp-for="datumZavrsetkaUsluge" class="form-control" placeholder="Unesite datum završetka usluge" />
+            <span asp-validation-for="datumZavrsetkaUsluge" class="text-danger"></span>
+        </div>
+        <div class="dalje-button">
+            <button type="submit" value="Create" class="btn btn-primary">Idi na plaćanje</button>
+        </div>
+    </form>
+</div>
 
 <script>
-
     document.addEventListener("DOMContentLoaded", function () {
         var inputs = document.querySelectorAll(".form-control");
 

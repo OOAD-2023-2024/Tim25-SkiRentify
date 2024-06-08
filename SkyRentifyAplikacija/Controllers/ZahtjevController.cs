@@ -145,7 +145,8 @@ namespace SkyRentifyAplikacija.Controllers
                     }
                     _context.Update(zahtjev);
                     await _context.SaveChangesAsync();
-                    //return RedirectToAction(nameof(Index)); ovdje treba poziv koji ce odnijeti tamo prema placanju
+                    return RedirectToAction("ProcesPlacanja", new { zahtjevId = zahtjev.Id });
+                    //poziv koji ce odnijeti tamo prema placanju
                 }
             }
             //ViewData["KlijentId"] = new SelectList(_context.Klijent, "Id", "Id", zahtjev.KlijentId);
@@ -201,38 +202,48 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> OdaberiOpremu(int zahtjevId, int opremaId)
+        public async Task<IActionResult> OdaberiOpremu(int zahtjevId, string selectedItems)
         {
-            var skije= await _context.Skije.FindAsync(opremaId);
-            var pancerice = await _context.Pancerice.FindAsync(opremaId);
-            var kacige = await _context.Kaciga.FindAsync(opremaId);
-            var stapovi = await _context.Stapovi.FindAsync(opremaId);
-            var snowboard = await _context.Snowboard.FindAsync(opremaId);
-            var snowboardCipele = await _context.SnowboardCipele.FindAsync(opremaId);
-            var cijena = 0.0;
-            if (skije != null)
+            double cijena = 0.0;
+            var opremaIds = selectedItems.Split(',').Select(int.Parse).ToList();
+
+            foreach (var opremaId in opremaIds)
             {
-                cijena=skije.cijena;
-            }else if (pancerice != null)
-            {
-                cijena=pancerice.cijena;
-            }else if(kacige != null)
-            {
-                cijena=kacige.cijena;
-            }else if(stapovi != null)
-            {
-                cijena=stapovi.cijena;
-            }else if(snowboard != null)
-            {
-                cijena=snowboard.cijena;
-            }else if(snowboardCipele != null)
-            {
-                cijena=snowboardCipele.cijena;
-            }else
-            {
-                return NotFound();
+                var skije = await _context.Skije.FindAsync(opremaId);
+                var pancerice = await _context.Pancerice.FindAsync(opremaId);
+                var kacige = await _context.Kaciga.FindAsync(opremaId);
+                var stapovi = await _context.Stapovi.FindAsync(opremaId);
+                var snowboard = await _context.Snowboard.FindAsync(opremaId);
+                var snowboardCipele = await _context.SnowboardCipele.FindAsync(opremaId);
+
+                // Provjeravamo postoji li stavka opreme s tim ID-om i dodjeljujemo cijenu
+                if (skije != null)
+                {
+                    cijena += skije.cijena;
+                }
+                else if (pancerice != null)
+                {
+                    cijena += pancerice.cijena;
+                }
+                else if (kacige != null)
+                {
+                    cijena += kacige.cijena;
+                }
+                else if (stapovi != null)
+                {
+                    cijena += stapovi.cijena;
+                }
+                else if (snowboard != null)
+                {
+                    cijena += snowboard.cijena;
+                }
+                else if (snowboardCipele != null)
+                {
+                    cijena += snowboardCipele.cijena;
+                }
             }
-            var zahtjev= await _context.Zahtjev.FindAsync(zahtjevId);
+
+            var zahtjev = await _context.Zahtjev.FindAsync(zahtjevId);
             if (zahtjev != null)
             {
                 zahtjev.cijena += cijena;
@@ -243,18 +254,23 @@ namespace SkyRentifyAplikacija.Controllers
             {
                 return NotFound();
             }
-            var stavkaZahtjeva = new StavkaZahtjeva
-            {
-                ZahtjevId = zahtjevId,
-                OpremaId = opremaId,
-            };
 
-            _context.StavkaZahtjeva.Add(stavkaZahtjeva);
+            // Spremamo sve stavke u bazi podataka
+            foreach (var opremaId in opremaIds)
+            {
+                var stavkaZahtjeva = new StavkaZahtjeva
+                {
+                    ZahtjevId = zahtjevId,
+                    OpremaId = opremaId,
+                };
+                _context.Add(stavkaZahtjeva);
+            }
+
             await _context.SaveChangesAsync();
 
-            // Redirektuj nazad na prikaz opreme
-            return RedirectToAction("PrikazOpreme", new { zahtjevId });
+            return RedirectToAction("ProcesPlacanja", new { zahtjevId = zahtjev.Id });
         }
+
 
         // GET: Zahtjev/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -346,6 +362,58 @@ namespace SkyRentifyAplikacija.Controllers
         private bool ZahtjevExists(int id)
         {
             return _context.Zahtjev.Any(e => e.Id == id);
+        }
+
+        //rukovanje sa placanjem
+
+        // Metoda za prikaz forme za plaćanje
+        public IActionResult ProcesPlacanja(int zahtjevId)
+        {
+            var zahtjev = _context.Zahtjev.Find(zahtjevId);
+            if (zahtjev == null)
+            {
+                return NotFound();
+            }
+
+            var model = new ProcesPlacanjaModel
+            {
+                ZahtjevId = zahtjevId,
+                UkupnaCijena = zahtjev.cijena
+            };
+
+            return View(model);
+        }
+
+        // Metoda za rukovanje POST zahtjevom za plaćanje
+        [HttpPost]
+        public async Task<IActionResult> ProcesPlacanja(ProcesPlacanjaModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var zahtjev = _context.Zahtjev.Find(model.ZahtjevId);
+                if (zahtjev == null)
+                {
+                    return NotFound();
+                }
+                zahtjev.placeno = true;
+                _context.Update(zahtjev);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("UspjesnoPlacanje", new { zahtjevId = model.ZahtjevId });
+            }
+
+            // Ako postoji greška u validaciji, ponovo prikazati formu
+            return View(model);
+        }
+
+        public IActionResult UspjesnoPlacanje(int zahtjevId)
+        {
+            var zahtjev = _context.Zahtjev.Find(zahtjevId);
+            if (zahtjev == null)
+            {
+                return NotFound();
+            }
+
+            return View(zahtjev);
         }
     }
 }

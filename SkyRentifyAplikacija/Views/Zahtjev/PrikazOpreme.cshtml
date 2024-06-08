@@ -1,7 +1,7 @@
 ﻿@model SkyRentifyAplikacija.Models.OpremaPrikazViewModel
 
 @{
-    ViewData["Title"] = "Odaberite Opremu";
+    ViewData["Title"] = "Preporučena oprema";
 }
 
 <style>
@@ -10,32 +10,66 @@
         margin: 0;
         background: linear-gradient(135deg, #007bff, #b3d9ff);
         background-repeat: repeat;
-        background-size: cover
+        background-size: cover;
+    }
+    .card-text{
+        color:darkorange;
     }
 
-    .card-body {
-        background: #FFF5EE 
-    }
-
-    .card-body {
-        color: #F0F8FF; /* Promena boje za cijenu */
-    }
-
-    .card-title{
-    color:darkorange
+    .card-title {
+        color: darkorange;
     }
 
     .heading.orange-text {
         color: darkorange;
     }
 
-    .text-center.my-4{
+    .text-center.my-4 {
         color: darkorange;
     }
-    
+
+    .btn-orange {
+        background-color: orange;
+        color: white;
+    }
+
+        .btn-orange:hover {
+            background-color: darkorange;
+        }
+
+    .btn-lg {
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 8px;
+    }
+
+    .center-btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Stilovi za checkbox */
+    .checkbox-label {
+        display: inline-flex; /* Postavlja labelu kao fleksibilni kontejner */
+        align-items: center; /* Centrira sadržaj vertikalno unutar fleksibilnog kontejnera */
+    }
+
+    .opremaCheckbox {
+        margin-right: 10px; /* Razmak između checkboxa i teksta */
+        width:20px;
+        height:20px;
+    }
+
+    /* Stilovi za centriranje */
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centriranje sadržaja unutar kartice */
+    }
+
 </style>
 
-<h2 class="text-center my-4">Odaberite Opremu</h2>
+<h2 class="text-center my-4">Preporučena oprema</h2>
 
 <div class="container">
     <div class="row">
@@ -53,12 +87,10 @@
                                     <h5 class="card-title">@skija.marka skije</h5>
                                     <p class="card-text"><strong>@skija.cijena KM</strong></p>
                                     @Html.ActionLink("Detalji", "Details", "Skije", new { id = skija.Id }, new { @class = "btn btn-primary btn-sm" })
-                                    @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post, new { @class = "mt-2" }))
-                                    {
-                                        @Html.Hidden("zahtjevId", Model.ZahtjevId)
-                                        @Html.Hidden("opremaId", skija.Id)
-                                        <button type="submit" class="btn btn-success btn-sm">Odaberi</button>
-                                    }
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="opremaCheckbox" value="@skija.Id">
+                                        Odaberi
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -72,21 +104,19 @@
             <div class="col-12 mb-4">
                 <h3 class="heading orange-text">Pancerice</h3>
                 <div class="row">
-                    @foreach (var pancerica in Model.Pancerice)
+                    @foreach (var pancerice in Model.Pancerice)
                     {
                         <div class="col-sm-6 col-md-4 col-lg-3">
                             <div class="card mb-4">
                                 <img src="https://i.ibb.co/7SHJBPn/pancerice.jpg" class="card-img-top" alt="Slika pancerica">
                                 <div class="card-body">
-                                    <h5 class="card-title">@pancerica.marka pancerice</h5>
-                                    <p class="card-text"><strong>@pancerica.cijena KM</strong></p>
-                                    @Html.ActionLink("Detalji", "Details", "Pancerice", new { id = pancerica.Id }, new { @class = "btn btn-primary btn-sm" })
-                                    @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post, new { @class = "mt-2" }))
-                                    {
-                                        @Html.Hidden("zahtjevId", Model.ZahtjevId)
-                                        @Html.Hidden("opremaId", pancerica.Id)
-                                        <button type="submit" class="btn btn-success btn-sm">Odaberi</button>
-                                    }
+                                    <h5 class="card-title">@pancerice.marka pancerice</h5>
+                                    <p class="card-text"><strong>@pancerice.cijena KM</strong></p>
+                                    @Html.ActionLink("Detalji", "Details", "Pancerice", new { id = pancerice.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="opremaCheckbox" value="@pancerice.Id">
+                                        Odaberi
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -100,77 +130,19 @@
             <div class="col-12 mb-4">
                 <h3 class="heading orange-text">Kacige</h3>
                 <div class="row">
-                    @foreach (var kaciga in Model.Kacige)
+                    @foreach (var kacige in Model.Kacige)
                     {
                         <div class="col-sm-6 col-md-4 col-lg-3">
                             <div class="card mb-4">
-                                <img src="https://i.ibb.co/WGNG5cD/kaciga.jpg" class="card-img-top" alt="Slika kacige">
+                                <img src="https://i.ibb.co/WGNG5cD/kaciga.jpg" class="card-img-top" alt="Slika kaciga">
                                 <div class="card-body">
-                                    <h5 class="card-title">@kaciga.marka kaciga</h5>
-                                    <p class="card-text"><strong>@kaciga.cijena KM</strong></p>
-                                    @Html.ActionLink("Detalji", "Details", "Kaciga", new { id = kaciga.Id }, new { @class = "btn btn-primary btn-sm" })
-                                    @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post, new { @class = "mt-2" }))
-                                    {
-                                        @Html.Hidden("zahtjevId", Model.ZahtjevId)
-                                        @Html.Hidden("opremaId", kaciga.Id)
-                                        <button type="submit" class="btn btn-success btn-sm">Odaberi</button>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </div>
-            </div>
-        }
-
-        @if (Model.Snowboard.Any())
-        {
-            <div class="col-12 mb-4">
-                <h3 class="heading orange-text">Snowboardi</h3>
-                <div class="row">
-                    @foreach (var snowboard in Model.Snowboard)
-                    {
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="card mb-4">
-                                <img src="https://i.ibb.co/zGwCZ77/snowboard.png" class="card-img-top" alt="Slika snowboarda">
-                                <div class="card-body">
-                                    <h5 class="card-title">@snowboard.marka snowboard</h5>
-                                    <p class="card-text"><strong>@snowboard.cijena KM</strong></p>
-                                    @Html.ActionLink("Detalji", "Details", "Snowboard", new { id = snowboard.Id }, new { @class = "btn btn-primary btn-sm" })
-                                    @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post, new { @class = "mt-2" }))
-                                    {
-                                        @Html.Hidden("zahtjevId", Model.ZahtjevId)
-                                        @Html.Hidden("opremaId", snowboard.Id)
-                                        <button type="submit" class="btn btn-success btn-sm">Odaberi</button>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </div>
-            </div>
-        }
-
-        @if (Model.SnowboardCipele.Any())
-        {
-            <div class="col-12 mb-4">
-                <h3 class="heading orange-text">Snowboard Cipele</h3>
-                <div class="row">
-                    @foreach (var snowboardcipele in Model.SnowboardCipele)
-                    {
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="card mb-4">
-                                <img src="https://i.ibb.co/6bH9W4m/snowboard-cizme.jpg" class="card-img-top" alt="Slika snowboard cipela">
-                                <div class="card-body">
-                                    <h5 class="card-title">@snowboardcipele.marka snowboard cipele</h5>
-                                    <p class="card-text"><strong>@snowboardcipele.cijena KM</strong></p>
-                                    @Html.ActionLink("Detalji", "Details", "Snowboard", new { id = snowboardcipele.Id }, new { @class = "btn btn-primary btn-sm" })
-                                    @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post, new { @class = "mt-2" }))
-                                    {
-                                        @Html.Hidden("zahtjevId", Model.ZahtjevId)
-                                        @Html.Hidden("opremaId", snowboardcipele.Id)
-                                        <button type="submit" class="btn btn-success btn-sm">Odaberi</button>
-                                    }
+                                    <h5 class="card-title">@kacige.marka kaciga</h5>
+                                    <p class="card-text"><strong>@kacige.cijena KM</strong></p>
+                                    @Html.ActionLink("Detalji", "Details", "Kaciga", new { id = kacige.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="opremaCheckbox" value="@kacige.Id">
+                                        Odaberi
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -193,12 +165,10 @@
                                     <h5 class="card-title">@stapovi.marka štapovi</h5>
                                     <p class="card-text"><strong>@stapovi.cijena KM</strong></p>
                                     @Html.ActionLink("Detalji", "Details", "Stapovi", new { id = stapovi.Id }, new { @class = "btn btn-primary btn-sm" })
-                                    @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post, new { @class = "mt-2" }))
-                                    {
-                                        @Html.Hidden("zahtjevId", Model.ZahtjevId)
-                                        @Html.Hidden("opremaId", stapovi.Id)
-                                        <button type="submit" class="btn btn-success btn-sm">Odaberi</button>
-                                    }
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="opremaCheckbox" value="@stapovi.Id">
+                                        Odaberi
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -206,8 +176,91 @@
                 </div>
             </div>
         }
-    </div>
-    <div class="col-12">
-        @Html.ActionLink("Proces Placanja", "ProcesPlacanja", "Zahtjev", new { zahtjevId = Model.ZahtjevId }, new { @class = "btn btn-primary" })
+
+        @if (Model.Snowboard.Any())
+        {
+            <div class="col-12 mb-4">
+                <h3 class="heading orange-text">Snowboardi</h3>
+                <div class="row">
+                    @foreach (var snowboard in Model.Snowboard)
+                    {
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card mb-4">
+                                <img src="https://i.ibb.co/zGwCZ77/snowboard.png" class="card-img-top" alt="Slika snowboarda">
+                                <div class="card-body">
+                                    <h5 class="card-title">@snowboard.marka snowboard</h5>
+                                    <p class="card-text"><strong>@snowboard.cijena KM</strong></p>
+                                    @Html.ActionLink("Detalji", "Details", "Snowboard", new { id = snowboard.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="opremaCheckbox" value="@snowboard.Id">
+                                        Odaberi
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+
+        @if (Model.SnowboardCipele.Any())
+        {
+            <div class="col-12 mb-4">
+                <h3 class="heading orange-text">Snowboard cipele</h3>
+                <div class="row">
+                    @foreach (var snowboardcipele in Model.SnowboardCipele)
+                    {
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card mb-4">
+                                <img src="https://i.ibb.co/6bH9W4m/snowboard-cizme.jpg" class="card-img-top" alt="Slika snowboard cipela">
+                                <div class="card-body">
+                                    <h5 class="card-title">@snowboardcipele.marka snowboard cipele</h5>
+                                    <p class="card-text"><strong>@snowboardcipele.cijena KM</strong></p>
+                                    @Html.ActionLink("Detalji", "Details", "SnowboardCipele", new { id = snowboardcipele.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="opremaCheckbox" value="@snowboardcipele.Id">
+                                        Odaberi
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+        <div class="col-12 center-btn">
+            <button type="button" class="btn btn-orange btn-lg" onclick="submitSelectedItems()">Nastavi na plaćanje</button>
+        </div>
     </div>
 </div>
+
+<script>
+    function submitSelectedItems() {
+        var selectedItems = [];
+        var checkboxes = document.querySelectorAll('.opremaCheckbox:checked');
+        checkboxes.forEach(function (checkbox) {
+            selectedItems.push(checkbox.value);
+        });
+
+        // Pošaljemo odabrane stavke na server
+        var form = document.createElement('form');
+        form.setAttribute('method', 'post');
+        form.setAttribute('action', '@Url.Action("OdaberiOpremu", "Zahtjev")');
+        form.classList.add('mt-2');
+
+        var zahtjevIdInput = document.createElement('input');
+        zahtjevIdInput.setAttribute('type', 'hidden');
+        zahtjevIdInput.setAttribute('name', 'zahtjevId');
+        zahtjevIdInput.setAttribute('value', '@Model.ZahtjevId');
+        form.appendChild(zahtjevIdInput);
+
+        var selectedItemsInput = document.createElement('input');
+        selectedItemsInput.setAttribute('type', 'hidden');
+        selectedItemsInput.setAttribute('name', 'selectedItems');
+        selectedItemsInput.setAttribute('value', selectedItems.join());
+        form.appendChild(selectedItemsInput);
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+</script>

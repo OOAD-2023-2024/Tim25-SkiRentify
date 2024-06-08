@@ -1,0 +1,113 @@
+﻿@model SkyRentifyAplikacija.Models.ProcesPlacanjaModel
+
+@{
+    ViewData["Title"] = "Proces Plaćanja";
+}
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h2 {
+        text-align: center;
+        color: darkorange;
+        margin-top: 20px;
+    }
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+        .form-container form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .control-label {
+        color: darkorange;
+        font-weight: bold;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .btn-primary {
+        background-color: darkorange;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+
+        .btn-primary:hover {
+            background-color: orangered;
+        }
+
+    .text-danger {
+        color: red;
+        font-size: 12px;
+    }
+
+    h4 {
+        text-align: center;
+        color: darkorange;
+    }
+</style>
+
+<h2>Proces Plaćanja</h2>
+<div class="form-container">
+    <form asp-action="ProcesPlacanja" method="post">
+        <h4>Ukupna cijena: @Model.UkupnaCijena KM</h4>
+        <hr />
+        <div class="form-group">
+            <label asp-for="BrojKartice" class="control-label"></label>
+            <input asp-for="BrojKartice" class="form-control" placeholder="Unesite broj kartice" />
+            <span asp-validation-for="BrojKartice" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ime" class="control-label"></label>
+            <input asp-for="Ime" class="form-control" placeholder="Unesite ime" />
+            <span asp-validation-for="Ime" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DatumIsteka" class="control-label"></label>
+            <input asp-for="DatumIsteka" class="form-control" placeholder="MM/GG" />
+            <span asp-validation-for="DatumIsteka" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CVV" class="control-label"></label>
+            <input asp-for="CVV" class="form-control" placeholder="Unesite CVV" />
+            <span asp-validation-for="CVV" class="text-danger"></span>
+        </div>
+        <input type="hidden" asp-for="ZahtjevId" />
+        <input type="hidden" asp-for="UkupnaCijena" />
+        <button type="submit" class="btn btn-primary">Plati</button>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
