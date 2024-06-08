@@ -56,26 +56,26 @@ namespace SkyRentifyAplikacija.Controllers
             // GET: Zahtjev/Create
             public IActionResult Create()
             {
-            string tipZahtjeva = fileHandler.ReadFromFile(putanjaTipZahtjeva);
+              string tipZahtjeva = fileHandler.ReadFromFile(putanjaTipZahtjeva);
 
-            if (tipZahtjeva == "servisiranje")
-            {
+              if (tipZahtjeva == "servisiranje")
+               {
                 // Show the CreateServisiranje view for service requests
                 return View("CreateServisiranje");
-            }
-            else
-            {
+               }
+              else
+               {
                 // Show the regular Create view for other requests (presumably rentals)
                 var nivoVjestineTipovi = Enum.GetValues(typeof(Vjestina)).Cast<Vjestina>().ToList();
                 ViewBag.VjestinaTipovi = new SelectList(nivoVjestineTipovi.Select(v => new { Id = (int)v, Name = v.ToString() }), "Id", "Name");
                 return View();
+               }
             }
-        }
 
         // POST: Zahtjev/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        /*public async Task<IActionResult> Create([Bind("Id,datumPodnosenjaZahtjeva,datumIzdavanjaUsluge,datumZavrsetkaUsluge,KlijentId,klijent,cijena,popust,placeno")] Zahtjev zahtjev)
+        public async Task<IActionResult> Create([Bind("Id,datumPodnosenjaZahtjeva,datumIzdavanjaUsluge,datumZavrsetkaUsluge,KlijentId,klijent,cijena,popust,placeno")] Zahtjev zahtjev)
         {
             tipZahtjeva= fileHandler.ReadFromFile(putanjaTipZahtjeva);
             opcije=fileHandler.ReadFromFile(putanjaOpcijeServisiranja);
@@ -104,17 +104,53 @@ namespace SkyRentifyAplikacija.Controllers
                     };
                     _context.Add(noviZahtjevTip);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction("PrikazOpreme", new { zahtjevId = zahtjev.Id });
                 }
                 else
                 {
-                    //sad provjera je li poliranje ili popravak vezova ili oboje
-                    //naci u bazi to sto treba azurirati cijenu zahtjeva onda napravit ono za medjutabelu i povezat ih
+                    TipZahtjeva tipPoliranje = sviTipoviZahtjeva.Find(t => t.naziv == Tip.POLIRANJE);
+                    TipZahtjeva tipPopravakVezova = sviTipoviZahtjeva.Find(t => t.naziv == Tip.POPRAVAK_VEZOVA);
+                    var cijena1 = tipPoliranje.cijena;
+                    var cijena2 = tipPopravakVezova.cijena;
+                    TipoviZahtjeva noviZahtjevTip1 = new TipoviZahtjeva
+                    {
+                        ZahtjevId = zahtjev.Id,
+                        TipZahtjevaId = tipPoliranje.ID
+                    };
+
+                    TipoviZahtjeva noviZahtjevTip2 = new TipoviZahtjeva
+                    {
+                        ZahtjevId = zahtjev.Id,
+                        TipZahtjevaId = tipPopravakVezova.ID
+                    };
+                    if (opcije.Contains("Poliranje skija") && opcije.Contains("Popravak vezova"))
+                    {                 
+                        _context.Add(noviZahtjevTip1);
+                        await _context.SaveChangesAsync();
+                        _context.Add(noviZahtjevTip2);
+                        await _context.SaveChangesAsync();
+                        zahtjev.cijena= cijena1 + cijena2;
+                    }
+                    else if (opcije.Contains("Poliranje skija"))
+                    {
+                        _context.Add(noviZahtjevTip1);
+                        await _context.SaveChangesAsync();
+                        zahtjev.cijena= cijena1;
+                    }
+                    else if (opcije.Contains("Popravak vezova"))
+                    {
+                        _context.Add(noviZahtjevTip2);
+                        await _context.SaveChangesAsync();
+                        zahtjev.cijena= cijena2;
+                    }
+                    _context.Update(zahtjev);
+                    await _context.SaveChangesAsync();
+                    //return RedirectToAction(nameof(Index)); ovdje treba poziv koji ce odnijeti tamo prema placanju
                 }
-                return RedirectToAction("PrikazOpreme", new { zahtjevId = zahtjev.Id });
             }
             //ViewData["KlijentId"] = new SelectList(_context.Klijent, "Id", "Id", zahtjev.KlijentId);
             return View(zahtjev);
-        }*/
+        }
 
         public async Task<IActionResult> PrikazOpreme(int zahtjevId)
         {
@@ -167,6 +203,46 @@ namespace SkyRentifyAplikacija.Controllers
         [HttpPost]
         public async Task<IActionResult> OdaberiOpremu(int zahtjevId, int opremaId)
         {
+            var skije= await _context.Skije.FindAsync(opremaId);
+            var pancerice = await _context.Pancerice.FindAsync(opremaId);
+            var kacige = await _context.Kaciga.FindAsync(opremaId);
+            var stapovi = await _context.Stapovi.FindAsync(opremaId);
+            var snowboard = await _context.Snowboard.FindAsync(opremaId);
+            var snowboardCipele = await _context.SnowboardCipele.FindAsync(opremaId);
+            var cijena = 0.0;
+            if (skije != null)
+            {
+                cijena=skije.cijena;
+            }else if (pancerice != null)
+            {
+                cijena=pancerice.cijena;
+            }else if(kacige != null)
+            {
+                cijena=kacige.cijena;
+            }else if(stapovi != null)
+            {
+                cijena=stapovi.cijena;
+            }else if(snowboard != null)
+            {
+                cijena=snowboard.cijena;
+            }else if(snowboardCipele != null)
+            {
+                cijena=snowboardCipele.cijena;
+            }else
+            {
+                return NotFound();
+            }
+            var zahtjev= await _context.Zahtjev.FindAsync(zahtjevId);
+            if (zahtjev != null)
+            {
+                zahtjev.cijena += cijena;
+                _context.Update(zahtjev);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                return NotFound();
+            }
             var stavkaZahtjeva = new StavkaZahtjeva
             {
                 ZahtjevId = zahtjevId,

@@ -144,29 +144,11 @@
     <div class="dalje-button">
         <button type="submit" value="Create" class="btn btn-primary">Idi na odabir opreme</button>
     </div>
+    <!--ovdje dodat ono idi na placanje i da prosljedjuje zahtjevid prema njemu i nalazi se u zahtjev controleru simularcija-->
+    <!--ima httpget i httppost zahtjev procesplacanja i model za placanje-->
 </form>
 
 <script>
-    /*document.getElementById('daljeBtn').addEventListener('click', function (event) {
-        event.preventDefault(); // Prevents the default form submission behavior
-        var form = document.getElementById('formaUnosa');
-        if (form.checkValidity()) {
-            // Serialize form data and pass it to the action method
-            var formData = new FormData(form);
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'Url.Action("Create", "Zahtjev")'); // Adjust the URL if necessary
-            xhr.setRequestHeader("RequestVerificationToken", $('input[name="__RequestVerificationToken"]').val()); // Add anti-forgery token
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    // Redirect to the desired location
-                    window.location.href = "Zahtjev/PrikazOpreme"; // Change the URL as needed
-                }
-            };
-            xhr.send(formData);
-        } else {
-            alert("Molimo Vas unesite sve podatke.")
-        }
-    });*/
 
     document.addEventListener("DOMContentLoaded", function () {
         var inputs = document.querySelectorAll(".form-control");

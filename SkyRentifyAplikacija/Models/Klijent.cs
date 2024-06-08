@@ -11,22 +11,23 @@ namespace SkyRentifyAplikacija.Models
         [Required]
         [StringLength(maximumLength:15, MinimumLength=2, ErrorMessage="Ime mora imati" +
             "između 2 i 15 znakova")]
-        /*[RegularExpression(@"^[a-zA-Z]*$", ErrorMessage ="Dozvoljeno je samo korištenje " +
-            "velikih i malih slova!")]*/
+        [RegularExpression(@"^[a-zA-ZšđčćžŠĐČĆŽ]+$", ErrorMessage = "Dozvoljeno je samo korištenje " +
+        "velikih i malih slova, te slova s dijakritičkim znakovima.")]
         [DisplayName("Ime")]
         public string ime { get; set; }
         [Required]
         [StringLength(maximumLength: 15, MinimumLength = 2, ErrorMessage = "Prezime mora imati" +
             "između 2 i 15 znakova")]
-        /*[RegularExpression(@"^[a-zA-Z]*$", ErrorMessage = "Dozvoljeno je samo korištenje " +
-            "velikih i malih slova!")]*/
+        [RegularExpression(@"^[a-zA-ZšđčćžŠĐČĆŽ]+$", ErrorMessage = "Dozvoljeno je samo korištenje " +
+    "velikih i malih slova, te slova s dijakritičkim znakovima.")]
         [DisplayName("Prezime")]
         public string prezime { get; set; }
         [Required]
-        /*[RegularExpression(@"^\d+$", ErrorMessage = "Broj telefona mora sadržavati samo brojeve.")]*/
+        [RegularExpression(@"^\d+$", ErrorMessage = "Broj telefona mora sadržavati samo brojeve.")]
         [DisplayName("Broj telefona")]
         public string brojTelefona { get; set; }
         [DisplayName("Email")]
+        [EmailAddress(ErrorMessage = "Neispravan format e-pošte.")]
         public string email { get; set; }
         [DisplayName("Visina")]
         public double visina { get; set; }

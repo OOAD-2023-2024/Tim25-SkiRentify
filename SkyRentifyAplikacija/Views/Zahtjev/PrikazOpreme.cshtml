@@ -1,122 +1,213 @@
 ﻿@model SkyRentifyAplikacija.Models.OpremaPrikazViewModel
 
 @{
-    ViewData["Title"] = "Odaberite Opreme";
+    ViewData["Title"] = "Odaberite Opremu";
 }
 
-<h2>Odaberite Opreme</h2>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg, #007bff, #b3d9ff);
+        background-repeat: repeat;
+        background-size: cover
+    }
 
-@if (Model.Skije.Any())
-{
-    <h3>Skije</h3>
-    <ul>
-        @foreach (var skija in Model.Skije)
+    .card-body {
+        background: #FFF5EE 
+    }
+
+    .card-body {
+        color: #F0F8FF; /* Promena boje za cijenu */
+    }
+
+    .card-title{
+    color:darkorange
+    }
+
+    .heading.orange-text {
+        color: darkorange;
+    }
+
+    .text-center.my-4{
+        color: darkorange;
+    }
+    
+</style>
+
+<h2 class="text-center my-4">Odaberite Opremu</h2>
+
+<div class="container">
+    <div class="row">
+        @if (Model.Skije.Any())
         {
-            <li>
-                @Html.ActionLink("Detalji", "Details", "Skije", new { id = skija.Id }, null) - @skija.GetType().Name
-                @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post))
-                {
-                    @Html.Hidden("zahtjevId", Model.ZahtjevId)
-                    @Html.Hidden("opremaId", skija.Id)
-                    <button type="submit">Odaberi</button>
-                }
-            </li>
+            <div class="col-12 mb-4">
+                <h3 class="heading orange-text">Skije</h3>
+                <div class="row">
+                    @foreach (var skija in Model.Skije)
+                    {
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card mb-4">
+                                <img src="https://i.ibb.co/jJgFLgv/skije.jpg" class="card-img-top" alt="Slika skija">
+                                <div class="card-body">
+                                    <h5 class="card-title">@skija.marka skije</h5>
+                                    <p class="card-text"><strong>@skija.cijena KM</strong></p>
+                                    @Html.ActionLink("Detalji", "Details", "Skije", new { id = skija.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post, new { @class = "mt-2" }))
+                                    {
+                                        @Html.Hidden("zahtjevId", Model.ZahtjevId)
+                                        @Html.Hidden("opremaId", skija.Id)
+                                        <button type="submit" class="btn btn-success btn-sm">Odaberi</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
         }
-    </ul>
-}
 
-@if (Model.Pancerice.Any())
-{
-    <h3>Pancerice</h3>
-    <ul>
-        @foreach (var pancerica in Model.Pancerice)
+        @if (Model.Pancerice.Any())
         {
-            <li>
-                @Html.ActionLink("Detalji", "Details", "Pancerice", new { id = pancerica.Id }, null) - @pancerica.GetType().Name
-                @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post))
-                {
-                    @Html.Hidden("zahtjevId", Model.ZahtjevId)
-                    @Html.Hidden("opremaId", pancerica.Id)
-                    <button type="submit">Odaberi</button>
-                }
-            </li>
+            <div class="col-12 mb-4">
+                <h3 class="heading orange-text">Pancerice</h3>
+                <div class="row">
+                    @foreach (var pancerica in Model.Pancerice)
+                    {
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card mb-4">
+                                <img src="https://i.ibb.co/7SHJBPn/pancerice.jpg" class="card-img-top" alt="Slika pancerica">
+                                <div class="card-body">
+                                    <h5 class="card-title">@pancerica.marka pancerice</h5>
+                                    <p class="card-text"><strong>@pancerica.cijena KM</strong></p>
+                                    @Html.ActionLink("Detalji", "Details", "Pancerice", new { id = pancerica.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post, new { @class = "mt-2" }))
+                                    {
+                                        @Html.Hidden("zahtjevId", Model.ZahtjevId)
+                                        @Html.Hidden("opremaId", pancerica.Id)
+                                        <button type="submit" class="btn btn-success btn-sm">Odaberi</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
         }
-    </ul>
-}
 
-@if (Model.Kacige.Any())
-{
-    <h3>Kacige</h3>
-    <ul>
-        @foreach (var kaciga in Model.Kacige)
+        @if (Model.Kacige.Any())
         {
-            <li>
-                @Html.ActionLink("Detalji", "Details", "Kaciga", new { id = kaciga.Id }, null) - @kaciga.GetType().Name
-                @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post))
-                {
-                    @Html.Hidden("zahtjevId", Model.ZahtjevId)
-                    @Html.Hidden("opremaId", kaciga.Id)
-                    <button type="submit">Odaberi</button>
-                }
-            </li>
+            <div class="col-12 mb-4">
+                <h3 class="heading orange-text">Kacige</h3>
+                <div class="row">
+                    @foreach (var kaciga in Model.Kacige)
+                    {
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card mb-4">
+                                <img src="https://i.ibb.co/WGNG5cD/kaciga.jpg" class="card-img-top" alt="Slika kacige">
+                                <div class="card-body">
+                                    <h5 class="card-title">@kaciga.marka kaciga</h5>
+                                    <p class="card-text"><strong>@kaciga.cijena KM</strong></p>
+                                    @Html.ActionLink("Detalji", "Details", "Kaciga", new { id = kaciga.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post, new { @class = "mt-2" }))
+                                    {
+                                        @Html.Hidden("zahtjevId", Model.ZahtjevId)
+                                        @Html.Hidden("opremaId", kaciga.Id)
+                                        <button type="submit" class="btn btn-success btn-sm">Odaberi</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
         }
-    </ul>
-}
 
-@if (Model.Snowboard.Any())
-{
-    <h3>Snowboardi</h3>
-    <ul>
-        @foreach (var snowboard in Model.Snowboard)
+        @if (Model.Snowboard.Any())
         {
-            <li>
-                @Html.ActionLink("Detalji", "Details", "Snowboard", new { id = snowboard.Id }, null) - @snowboard.GetType().Name
-                @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post))
-                {
-                    @Html.Hidden("zahtjevId", Model.ZahtjevId)
-                    @Html.Hidden("opremaId", snowboard.Id)
-                    <button type="submit">Odaberi</button>
-                }
-            </li>
+            <div class="col-12 mb-4">
+                <h3 class="heading orange-text">Snowboardi</h3>
+                <div class="row">
+                    @foreach (var snowboard in Model.Snowboard)
+                    {
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card mb-4">
+                                <img src="https://i.ibb.co/zGwCZ77/snowboard.png" class="card-img-top" alt="Slika snowboarda">
+                                <div class="card-body">
+                                    <h5 class="card-title">@snowboard.marka snowboard</h5>
+                                    <p class="card-text"><strong>@snowboard.cijena KM</strong></p>
+                                    @Html.ActionLink("Detalji", "Details", "Snowboard", new { id = snowboard.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post, new { @class = "mt-2" }))
+                                    {
+                                        @Html.Hidden("zahtjevId", Model.ZahtjevId)
+                                        @Html.Hidden("opremaId", snowboard.Id)
+                                        <button type="submit" class="btn btn-success btn-sm">Odaberi</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
         }
-    </ul>
-}
 
-@if (Model.SnowboardCipele.Any())
-{
-    <h3>Snowboard Cipele</h3>
-    <ul>
-        @foreach (var snowboardcipele in Model.SnowboardCipele)
+        @if (Model.SnowboardCipele.Any())
         {
-            <li>
-                @Html.ActionLink("Detalji", "Details", "Snowboard", new { id = snowboardcipele.Id }, null) - @snowboardcipele.GetType().Name
-                @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post))
-                {
-                    @Html.Hidden("zahtjevId", Model.ZahtjevId)
-                    @Html.Hidden("opremaId", snowboardcipele.Id)
-                    <button type="submit">Odaberi</button>
-                }
-            </li>
+            <div class="col-12 mb-4">
+                <h3 class="heading orange-text">Snowboard Cipele</h3>
+                <div class="row">
+                    @foreach (var snowboardcipele in Model.SnowboardCipele)
+                    {
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card mb-4">
+                                <img src="https://i.ibb.co/6bH9W4m/snowboard-cizme.jpg" class="card-img-top" alt="Slika snowboard cipela">
+                                <div class="card-body">
+                                    <h5 class="card-title">@snowboardcipele.marka snowboard cipele</h5>
+                                    <p class="card-text"><strong>@snowboardcipele.cijena KM</strong></p>
+                                    @Html.ActionLink("Detalji", "Details", "Snowboard", new { id = snowboardcipele.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post, new { @class = "mt-2" }))
+                                    {
+                                        @Html.Hidden("zahtjevId", Model.ZahtjevId)
+                                        @Html.Hidden("opremaId", snowboardcipele.Id)
+                                        <button type="submit" class="btn btn-success btn-sm">Odaberi</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
         }
-    </ul>
-}
 
-
-@if (Model.Stapovi.Any())
-{
-    <h3>Stapovi</h3>
-    <ul>
-        @foreach (var stapovi in Model.Stapovi)
+        @if (Model.Stapovi.Any())
         {
-            <li>
-                @Html.ActionLink("Detalji", "Details", "Stapovi", new { id = stapovi.Id }, null) - @stapovi.GetType().Name
-                @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post))
-                {
-                    @Html.Hidden("zahtjevId", Model.ZahtjevId)
-                    @Html.Hidden("opremaId", stapovi.Id)
-                    <button type="submit">Odaberi</button>
-                }
-            </li>
+            <div class="col-12 mb-4">
+                <h3 class="heading orange-text">Štapovi</h3>
+                <div class="row">
+                    @foreach (var stapovi in Model.Stapovi)
+                    {
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card mb-4">
+                                <img src="https://i.ibb.co/9cXyHLm/stapovi.jpg" class="card-img-top" alt="Slika stapova">
+                                <div class="card-body">
+                                    <h5 class="card-title">@stapovi.marka štapovi</h5>
+                                    <p class="card-text"><strong>@stapovi.cijena KM</strong></p>
+                                    @Html.ActionLink("Detalji", "Details", "Stapovi", new { id = stapovi.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    @using (Html.BeginForm("OdaberiOpremu", "Zahtjev", FormMethod.Post, new { @class = "mt-2" }))
+                                    {
+                                        @Html.Hidden("zahtjevId", Model.ZahtjevId)
+                                        @Html.Hidden("opremaId", stapovi.Id)
+                                        <button type="submit" class="btn btn-success btn-sm">Odaberi</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
         }
-    </ul>
-}
+    </div>
+    <div class="col-12">
+        @Html.ActionLink("Proces Placanja", "ProcesPlacanja", "Zahtjev", new { zahtjevId = Model.ZahtjevId }, new { @class = "btn btn-primary" })
+    </div>
+</div>
