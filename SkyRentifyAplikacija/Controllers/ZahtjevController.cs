@@ -156,6 +156,10 @@ namespace SkyRentifyAplikacija.Controllers
         public async Task<IActionResult> PrikazOpreme(int zahtjevId)
         {
             //prikaz opreme za iznajmljivanje koja je na pocetku odabrana
+            //uzmes zahtjev preko zahtjevid iz baze
+            //uzmes klijent id preko tog zahtjeva
+            //uzmes visinu i nivo vjestine od klijenta 
+            //i na osnovu toga vracat odg listu za opremu
             var odabranestavke=fileHandler.ReadFromFile(putanjaOdabirIznajmljivanje);
             var odabranaLista= odabranestavke.Split(',').ToList();
             var skije = new List<Skije>();
@@ -390,6 +394,7 @@ namespace SkyRentifyAplikacija.Controllers
         {
             if (ModelState.IsValid)
             {
+                //ovdje na osnovu broja dana izracunati popust i primijeniti na cijenu
                 var zahtjev = _context.Zahtjev.Find(model.ZahtjevId);
                 if (zahtjev == null)
                 {
