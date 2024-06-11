@@ -157,10 +157,27 @@ namespace SkyRentifyAplikacija.Controllers
         {
             //prikaz opreme za iznajmljivanje koja je na pocetku odabrana
             //uzmes zahtjev preko zahtjevid iz baze
+            var zahtjev = await _context.Zahtjev.FindAsync(zahtjevId);
+
             //uzmes klijent id preko tog zahtjeva
+            var klijent = await _context.Klijent.FindAsync(zahtjev.KlijentId);
+
             //uzmes visinu i nivo vjestine od klijenta 
+            double visina = klijent.visina;
+            var vjestina = klijent.nivoVjestine;
             //i na osnovu toga vracat odg listu za opremu
-            var odabranestavke=fileHandler.ReadFromFile(putanjaOdabirIznajmljivanje);
+
+            // U kontroleru
+            var vjestineList = Enum.GetValues(typeof(Vjestina))
+                                   .Cast<Vjestina>()
+                                   .Select(v => new SelectListItem
+                                   {
+                                       Text = v.ToString(),
+                                       Value = v.ToString()
+                                   }).ToList();
+            ViewData["KlijentNivoVjestine"] = vjestineList;
+
+            var odabranestavke =fileHandler.ReadFromFile(putanjaOdabirIznajmljivanje);
             var odabranaLista= odabranestavke.Split(',').ToList();
             var skije = new List<Skije>();
             var kacige= new List<Kaciga>();
@@ -171,6 +188,15 @@ namespace SkyRentifyAplikacija.Controllers
             if (odabranaLista.Contains("Skije"))
             {
                 skije= await _context.Skije.ToListAsync();
+                if(vjestina.ToString() == Vjestina.POCETNIK.ToString()) //pocetnik 180
+                {
+                    skije.RemoveAll(s => s.duzina < visina - 30 || s.duzina > visina - 25);
+                }
+                else
+                {
+                    skije.RemoveAll(s => s.duzina < visina - 20 || s.duzina > visina - 15);
+                }
+
             }
             if (odabranaLista.Contains("Pancerice"))
             {

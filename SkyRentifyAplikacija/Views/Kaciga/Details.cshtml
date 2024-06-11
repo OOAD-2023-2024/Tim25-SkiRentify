@@ -4,39 +4,112 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<!-- Custom styles for the details page -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
 
-<div>
-    <h4>Kaciga</h4>
+    .details-container {
+        border: 2px solid #ff8c00; /* Dark orange border */
+        border-radius: 10px;
+        padding: 25px;
+        background-color: #fffaf0; /* Floral white background */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .details-header {
+        color: #ff8c00; /* Dark orange */
+        margin-bottom: 20px;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .details-title {
+        color: #ff8c00; /* Dark orange */
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .details-row dt {
+        font-weight: bold;
+        color: #333; /* Darker text color */
+        font-size: 1.1em;
+    }
+
+    .details-row dd {
+        color: #555; /* Medium dark text color */
+        font-size: 1.1em;
+    }
+
+    .action-buttons a {
+        margin-right: 10px;
+        color: #fff; /* White text color */
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1em;
+    }
+
+        .action-buttons a.btn-primary {
+            background-color: #ff8c00; /* Dark orange */
+            border: none;
+        }
+
+        .action-buttons a.btn-secondary {
+            background-color: #6c757d; /* Bootstrap secondary button color */
+            border: none;
+        }
+
+        .action-buttons a:hover {
+            opacity: 0.9; /* Slightly transparent on hover */
+        }
+
+    .mt-3 {
+        margin-top: 1rem;
+    }
+</style>
+
+<h1 class="details-header">Details</h1>
+
+<div class="details-container">
+    <h4 class="details-title">Kaciga</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.velicina)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.velicina)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cijena)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cijena)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.marka)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.marka)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.materijal)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.materijal)
-        </dd>
-    </dl>
+    @if (Model != null)
+    {
+        <dl class="row details-row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.velicina)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.velicina)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.cijena)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.cijena)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.marka)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.marka)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.materijal)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.materijal)
+            </dd>
+        </dl>
+    }
+    else
+    {
+        <p>No details available.</p>
+    }
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="action-buttons mt-3">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>

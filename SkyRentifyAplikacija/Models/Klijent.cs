@@ -15,6 +15,7 @@ namespace SkyRentifyAplikacija.Models
         "velikih i malih slova, te slova s dijakritičkim znakovima.")]
         [DisplayName("Ime")]
         public string ime { get; set; }
+
         [Required]
         [StringLength(maximumLength: 15, MinimumLength = 2, ErrorMessage = "Prezime mora imati" +
             "između 2 i 15 znakova")]
@@ -22,15 +23,20 @@ namespace SkyRentifyAplikacija.Models
     "velikih i malih slova, te slova s dijakritičkim znakovima.")]
         [DisplayName("Prezime")]
         public string prezime { get; set; }
+
         [Required]
         [RegularExpression(@"^\d+$", ErrorMessage = "Broj telefona mora sadržavati samo brojeve.")]
         [DisplayName("Broj telefona")]
         public string brojTelefona { get; set; }
+
         [DisplayName("Email")]
         [EmailAddress(ErrorMessage = "Neispravan format e-pošte.")]
         public string email { get; set; }
+
+        [Range(100, 230, ErrorMessage = "Visina mora biti između 100 i 230.")]
         [DisplayName("Visina")]
         public double visina { get; set; }
+
         [Required]
         [DisplayName("Nivo vještine")]
         [EnumDataType(typeof(Vjestina))] public Vjestina nivoVjestine { get; set; }
