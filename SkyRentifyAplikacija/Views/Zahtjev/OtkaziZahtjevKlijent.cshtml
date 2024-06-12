@@ -1,4 +1,8 @@
 ﻿<!DOCTYPE html>
+
+@{
+    ViewData["Title"] = "Otkazivanje zahtjeva";
+}
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +21,7 @@
             width: 80%;
             max-width: 600px;
             margin: 40px auto;
-            background-color: #fff;
+            background-color: #fff5ee;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -61,18 +65,47 @@
             .btn-primary:hover {
                 background-color: orangered;
             }
+
+        .btn-secondary {
+            background-color: darkorange;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+            .btn-secondary:hover {
+                background-color: orangered;
+            }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Otkazivanje zahtjeva</h2>
 
-        <form asp-action="Delete" method="" asp-controller="Zahtjev">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-info">@TempData["Message"]</div>
+        }
+
+        <form asp-action="BrisanjeZaKlijenta" method="post" asp-controller="Zahtjev">
             <div class="form-group">
                 <label class="label">ID zahtjeva:</label>
-                <input type="number" class="input-field" placeholder="Unesite ID zahtjeva" name="id" />
+                <input type="number" class="input-field" placeholder="Unesite ID zahtjeva" name="id" min="1" />
             </div>
-            <button type="submit" class="btn btn-primary">Otkaži zahtjev</button>
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">Otkaži zahtjev</button>
+                <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Vrati nazad</a>
+            </div>
         </form>
     </div>
 </body>

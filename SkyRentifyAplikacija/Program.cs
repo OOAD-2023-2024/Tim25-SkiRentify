@@ -53,7 +53,6 @@ app.MapControllerRoute(
             defaults: new { controller = "Zahtjev", action = "PrikazOpreme" }
         );
 
-
 app.MapControllerRoute(
     name: "formiranje_zahtjeva",
     pattern: "OdabirServisiranje",

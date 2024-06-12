@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using SkyRentifyAplikacija.Data;
 using SkyRentifyAplikacija.Models;
 using System.IO;
+using System.Security.Claims;
 
 namespace SkyRentifyAplikacija.Controllers
 {
@@ -362,7 +363,6 @@ namespace SkyRentifyAplikacija.Controllers
             {
                 return NotFound();
             }
-
             var zahtjev = await _context.Zahtjev
                 .Include(z => z.klijent)
                 .FirstOrDefaultAsync(m => m.Id == id);
@@ -446,5 +446,33 @@ namespace SkyRentifyAplikacija.Controllers
 
             return View(zahtjev);
         }
+
+        // GET: Zahtjev/BrisanjeZaKlijenta
+        public IActionResult BrisanjeZaKlijenta()
+        {
+            return View("OtkaziZahtjevKlijent");
+        }
+
+        // POST: Zahtjev/BrisanjeZaKlijenta
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> BrisanjeZaKlijenta(int id)
+        {
+            var zahtjev = await _context.Zahtjev.Include(z => z.klijent).FirstOrDefaultAsync(z => z.Id == id);
+
+            if (zahtjev == null)
+            {
+                TempData["Message"] = "Zahtjev s navedenim ID-om ne postoji.";
+                return RedirectToAction(nameof(BrisanjeZaKlijenta));
+            }
+
+            _context.Zahtjev.Remove(zahtjev);
+            await _context.SaveChangesAsync();
+
+            TempData["Message"] = "Zahtjev je uspješno obrisan.";
+            return RedirectToAction(nameof(BrisanjeZaKlijenta));
+        }
+
+
     }
 }

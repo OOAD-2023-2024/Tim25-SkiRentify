@@ -83,7 +83,7 @@ namespace SkyRentifyAplikacija.Controllers
 
         public IActionResult OtkaziZahtjev()
         {
-            return View();
+            return RedirectToAction("BrisanjeZaKlijenta", "Zahtjev");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
