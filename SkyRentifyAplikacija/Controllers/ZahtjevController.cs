@@ -68,7 +68,7 @@ namespace SkyRentifyAplikacija.Controllers
                 // Show the regular Create view for other requests (presumably rentals)
                 var nivoVjestineTipovi = Enum.GetValues(typeof(Vjestina)).Cast<Vjestina>().ToList();
                 ViewBag.VjestinaTipovi = new SelectList(nivoVjestineTipovi.Select(v => new { Id = (int)v, Name = v.ToString() }), "Id", "Name");
-                return View();
+                return View("Create");
                }
             }
 

@@ -54,6 +54,10 @@
                 document.getElementById("selectedItemInputServisiranje").value = "servisiranje";
                 document.getElementById("servisiranjeForm").submit();
             });
+
+            document.getElementById("cancelButton").addEventListener("click", function () {
+                document.getElementById("cancelForm").submit();
+            });
         });
     </script>
 </head>
@@ -73,6 +77,11 @@
             <input type="hidden" id="selectedItemInputServisiranje" name="selectedItem" value="">
             <button type="submit" class="btn btn-warning btn-custom">Servisiranje</button>
         </form>
+
+            <form id="cancelForm" method="" action="/Home/OtkaziZahtjev">
+                <button id="cancelButton" class="btn btn-danger" style="position: absolute; bottom: 20px; right: 20px;">Otkaži zahtjev</button>
+            </form>
+
         </div>
     </div>
 </body>

@@ -66,6 +66,12 @@ app.MapControllerRoute(
     defaults: new { controller = "Home", action = "OdabirIznajmljivanje" }
 );
 
+app.MapControllerRoute(
+    name: "otkazivanje",
+    pattern: "/OtkazivanjeZahtjeva",
+    defaults: new { controller = "Home", action = "OtkaziZahtjev" }
+);
+
 
 app.MapControllerRoute(
     name: "default",

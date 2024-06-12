@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otkazivanje zahtjeva</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: darkorange;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: darkorange;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: darkorange;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+            .btn-primary:hover {
+                background-color: orangered;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Otkazivanje zahtjeva</h2>
+
+        <form asp-action="Delete" method="" asp-controller="Zahtjev">
+            <div class="form-group">
+                <label class="label">ID zahtjeva:</label>
+                <input type="number" class="input-field" placeholder="Unesite ID zahtjeva" name="id" />
+            </div>
+            <button type="submit" class="btn btn-primary">Otkaži zahtjev</button>
+        </form>
+    </div>
+</body>
+</html>
