@@ -9,6 +9,8 @@ using SkyRentifyAplikacija.Data;
 using SkyRentifyAplikacija.Models;
 using System.IO;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SkyRentifyAplikacija.Controllers
 {
@@ -29,13 +31,35 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Zahtjev
+        [Authorize(Roles = "Vlasnik, Uposlenik")]
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Zahtjev.Include(z => z.klijent);
-            return View(await applicationDbContext.ToListAsync());
+            var today = DateTime.Today;
+
+            bool isOwner = User.IsInRole("Vlasnik");
+            bool isEmployee = User.IsInRole("Uposlenik");
+
+            IQueryable<Zahtjev> zahtjevi = _context.Zahtjev.Include(z => z.klijent);
+
+            if (isOwner)
+            {
+                // Sortiraj hronološki za vlasnika po datumu podnosenja
+                zahtjevi = zahtjevi.OrderBy(z => z.datumPodnosenjaZahtjeva);
+            }
+            else if (isEmployee)
+            {
+                // Filtriraj i sortiraj za uposlenika
+                //prikazat zahtjeve koji se mogu izdat danas il kasnije
+                zahtjevi = zahtjevi
+                    .Where(z => z.datumIzdavanjaUsluge.Date >= today)
+                    .OrderByDescending(z => z.datumPodnosenjaZahtjeva);
+            }
+
+            return View(await zahtjevi.ToListAsync());
         }
 
         // GET: Zahtjev/Details/5
+        [Authorize(Roles = "Vlasnik,Uposlenik")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -54,8 +78,8 @@ namespace SkyRentifyAplikacija.Controllers
             return View(zahtjev);
         }
 
-            // GET: Zahtjev/Create
-            public IActionResult Create()
+        // GET: Zahtjev/Create
+        public IActionResult Create()
             {
               string tipZahtjeva = fileHandler.ReadFromFile(putanjaTipZahtjeva);
 
@@ -76,7 +100,7 @@ namespace SkyRentifyAplikacija.Controllers
         // POST: Zahtjev/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,datumPodnosenjaZahtjeva,datumIzdavanjaUsluge,datumZavrsetkaUsluge,KlijentId,klijent,cijena,popust,placeno")] Zahtjev zahtjev)
+        public async Task<IActionResult> Create([Bind("Id,datumPodnosenjaZahtjeva,datumIzdavanjaUsluge,datumZavrsetkaUsluge,KlijentID,klijent,cijena,popust,placeno")] Zahtjev zahtjev)
         {
             tipZahtjeva= fileHandler.ReadFromFile(putanjaTipZahtjeva);
             opcije=fileHandler.ReadFromFile(putanjaOpcijeServisiranja);
@@ -87,7 +111,7 @@ namespace SkyRentifyAplikacija.Controllers
 
                 int noviKlijentId = zahtjev.klijent.Id;
                 zahtjev.KlijentId = noviKlijentId;
-                zahtjev.datumPodnosenjaZahtjeva = DateTime.Today;
+                zahtjev.datumPodnosenjaZahtjeva = DateTime.Today;            
 
                 _context.Add(zahtjev);
                 await _context.SaveChangesAsync();
@@ -169,14 +193,6 @@ namespace SkyRentifyAplikacija.Controllers
             //i na osnovu toga vracat odg listu za opremu
 
             // U kontroleru
-            var vjestineList = Enum.GetValues(typeof(Vjestina))
-                                   .Cast<Vjestina>()
-                                   .Select(v => new SelectListItem
-                                   {
-                                       Text = v.ToString(),
-                                       Value = v.ToString()
-                                   }).ToList();
-            ViewData["KlijentNivoVjestine"] = vjestineList;
 
             var odabranestavke =fileHandler.ReadFromFile(putanjaOdabirIznajmljivanje);
             var odabranaLista= odabranestavke.Split(',').ToList();
@@ -304,6 +320,7 @@ namespace SkyRentifyAplikacija.Controllers
 
 
         // GET: Zahtjev/Edit/5
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -325,6 +342,7 @@ namespace SkyRentifyAplikacija.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,datumPodnosenjaZahtjeva,datumIzdavanjaUsluje,datumZavrsetkaUsluge,KlijentId,cijena,popust,placeno")] Zahtjev zahtjev)
         {
             if (id != zahtjev.Id)
@@ -357,6 +375,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Zahtjev/Delete/5
+        [Authorize(Roles = "Vlasnik, Uposlenik")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -377,6 +396,7 @@ namespace SkyRentifyAplikacija.Controllers
         // POST: Zahtjev/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Vlasnik, Uposlenik")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var zahtjev = await _context.Zahtjev.FindAsync(id);
@@ -404,6 +424,24 @@ namespace SkyRentifyAplikacija.Controllers
             {
                 return NotFound();
             }
+            //racunanje popusta za zahtjev
+            //ako je preko 5 dana popust od 10%, a preko 10 dana popust od 20%
+            var dani = zahtjev.datumZavrsetkaUsluge - zahtjev.datumIzdavanjaUsluge;
+            var dan = dani.Days;
+            var popust = 0.0;
+            if (dan > 5 && dan < 10)
+            {
+                popust = 0.1;
+            }
+            else if (dan > 10)
+            {
+                popust = 0.2;
+            }
+            zahtjev.popust = popust;
+            zahtjev.cijena= zahtjev.cijena - (zahtjev.cijena * popust);
+            _context.Update(zahtjev);
+            _context.SaveChanges();
+            ViewBag.Popust= popust*100;
 
             var model = new ProcesPlacanjaModel
             {

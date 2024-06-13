@@ -14,11 +14,18 @@ namespace SkyRentifyAplikacija.Models
         public DateTime datumPodnosenjaZahtjeva { get; set; }
 
         [DisplayName("Datum izdavanja usluge")]
-        [FutureDate(ErrorMessage = "Datum izdavanja usluge mora biti u budućnosti")]
+        //[FutureDate(ErrorMessage = "Datum izdavanja mora biti u budućnosti")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
+        [Required(ErrorMessage = "Datum izdavanja usluge je obavezan.")]
+        //[ValidDates(ErrorMessage = "Datum izdavanja mora biti veći od današnjeg i manji od datuma završetka.")]
         public DateTime datumIzdavanjaUsluge { get; set; }
 
         [DisplayName("Datum završetka usluge")]
-        [DateGreaterThan("datumIzdavanjaUsluge", ErrorMessage = "Datum završetka usluge mora biti nakon datuma izdavanja")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        //[FutureDate(ErrorMessage = "Datum završetka mora biti u budućnosti")]
+        [Required(ErrorMessage = "Datum završetka usluge je obavezan.")]
         public DateTime datumZavrsetkaUsluge { get; set; }
 
         [ForeignKey("Klijent")]
@@ -38,45 +45,35 @@ namespace SkyRentifyAplikacija.Models
         public bool placeno { get; set; }
     }
 
-    /*public class FutureDateAttribute : ValidationAttribute
+    /*public class ValidDatesAttribute : ValidationAttribute
     {
-        public override bool IsValid1(object value)
-        {
-            if (value is DateTime dateTime)
-            {
-                return dateTime > DateTime.Now;
-            }
-            return false;
-        }
-    }*/
-
-    public class DateGreaterThanAttribute : ValidationAttribute
-    {
-        private readonly string _comparisonProperty;
-
-        public DateGreaterThanAttribute(string comparisonProperty)
-        {
-            _comparisonProperty = comparisonProperty;
-        }
-
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var property = validationContext.ObjectType.GetProperty(_comparisonProperty);
-
-            if (property == null)
+            if (value is DateTime dateValue)
             {
-                throw new ArgumentException("Property with this name not found");
+                var currentDate = DateTime.Now;
+
+                // Pristupamo drugom svojstvu modela pomocu ValidationContext.ObjectInstance
+                var endDateProperty = validationContext.ObjectType.GetProperty("datumZavrsetkaUsluge");
+                if (endDateProperty == null)
+                {
+                    return new ValidationResult("Datum završetka usluge nije pronađen.");
+                }
+
+                var endDate = (DateTime)endDateProperty.GetValue(validationContext.ObjectInstance);
+
+                // Vrsimo validaciju
+                if (dateValue > currentDate && dateValue < endDate)
+                {
+                    return ValidationResult.Success;
+                }
+                else
+                {
+                    return new ValidationResult("Datum izdavanja usluge mora biti veći od današnjeg i manji od datuma završetka usluge.");
+                }
             }
 
-            var comparisonValue = (DateTime)property.GetValue(validationContext.ObjectInstance);
-            var currentValue = (DateTime)value;
-
-            if (currentValue > comparisonValue)
-            {
-                return ValidationResult.Success;
-            }
-
-            return new ValidationResult(ErrorMessage ?? "Datum mora biti nakon datuma izdavanja");
+            return new ValidationResult("Neispravan format datuma.");
         }
-    }
+    }*/
 }

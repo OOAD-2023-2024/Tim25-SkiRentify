@@ -80,6 +80,10 @@
 <div class="form-container">
     <form asp-action="ProcesPlacanja" method="post">
         <h4>Ukupna cijena: @Model.UkupnaCijena KM</h4>
+        @if (ViewBag.Popust != null && (double)ViewBag.Popust != 0.0)
+        {
+            <h4>Čestitamo! Imate popust od @ViewBag.Popust%</h4>
+        }
         <hr />
         <div class="form-group">
             <label asp-for="BrojKartice" class="control-label"></label>

@@ -79,7 +79,7 @@
             <div class="btn-container">
                 <div class="btn-row">
                 <form id="pregledZahtjevaForm" method="" action="/Zahtjev/Index">
-                    <button type="submit" class="btn btn-warning btn-custom">Pregled zahtjeva</button>
+                    <button type="submit" class="btn btn-warning btn-custom">Pregled svih zahtjeva</button>
                 </form>
 
                 <form id="azuriranjeCijenaOpremaForm" method="" action="/Home/OpremaAzuriranje">
@@ -101,6 +101,13 @@ else if (User.IsInRole("Uposlenik"))
     <body>
         <div class="text-center mt-5">
             <h1 class="display-4 text-orange">SkiRentify - Vaš skijaški san sa<br>nama postaje stvarnost</h1>
+            <div class="btn-container">
+                <div class="btn-row">
+                    <form id="pregledZahtjevaForm" method="" action="/Zahtjev/Index">
+                        <button type="submit" class="btn btn-warning btn-custom">Pregled današnjih zahtjeva</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </body>
 }
@@ -111,7 +118,7 @@ else
         <h1 class="display-4 text-orange">SkiRentify - Vaš skijaški san sa<br>nama postaje stvarnost</h1>
 
         <div class="btn-container">
-        <!--Iznajmljivanje forma-->
+                <div class="btn-row">
         <form id="iznajmljivanjeForm" method="" action="/Home/postaviTipZahtjeva">
             <input type="hidden" id="selectedItemInputIznajmljivanje" name="selectedItem" value="">
             <button type="submit" class="btn btn-warning btn-custom">Iznajmljivanje</button>
@@ -122,6 +129,7 @@ else
             <input type="hidden" id="selectedItemInputServisiranje" name="selectedItem" value="">
             <button type="submit" class="btn btn-warning btn-custom">Servisiranje</button>
         </form>
+               </div>
 
             <form id="cancelForm" method="" action="/Zahtjev/BrisanjeZaKlijenta">
                 <button id="cancelButton" class="btn btn-danger" style="position: absolute; bottom: 20px; right: 20px;">Otkaži zahtjev</button>

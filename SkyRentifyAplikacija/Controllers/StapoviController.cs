@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Stapovi
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Stapovi.ToListAsync());
@@ -44,6 +46,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Stapovi/Create
+        [Authorize(Roles = "Vlasnik")]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +57,7 @@ namespace SkyRentifyAplikacija.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Create([Bind("duzina,Id,cijena,marka,materijal")] Stapovi stapovi)
         {
             if (ModelState.IsValid)
@@ -66,6 +70,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Stapovi/Edit/5
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,9 +91,11 @@ namespace SkyRentifyAplikacija.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("duzina,Id,cijena,marka,materijal")] Stapovi stapovi)
+        [Authorize(Roles = "Vlasnik")]
+        public async Task<IActionResult> Edit(int id, double cijena)
         {
-            if (id != stapovi.Id)
+            var stapovi = await _context.Stapovi.FindAsync(id);
+            if (stapovi==null)
             {
                 return NotFound();
             }
@@ -97,6 +104,7 @@ namespace SkyRentifyAplikacija.Controllers
             {
                 try
                 {
+                    stapovi.cijena = cijena;
                     _context.Update(stapovi);
                     await _context.SaveChangesAsync();
                 }
@@ -117,6 +125,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Stapovi/Delete/5
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,6 +146,7 @@ namespace SkyRentifyAplikacija.Controllers
         // POST: Stapovi/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var stapovi = await _context.Stapovi.FindAsync(id);

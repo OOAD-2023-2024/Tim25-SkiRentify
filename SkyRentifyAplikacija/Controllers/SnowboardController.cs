@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Snowboard
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Snowboard.ToListAsync());
@@ -44,6 +46,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Snowboard/Create
+        [Authorize(Roles = "Vlasnik")]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +57,7 @@ namespace SkyRentifyAplikacija.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Create([Bind("duzina,Id,cijena,marka,materijal")] Snowboard snowboard)
         {
             if (ModelState.IsValid)
@@ -66,6 +70,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Snowboard/Edit/5
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,9 +91,11 @@ namespace SkyRentifyAplikacija.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("duzina,Id,cijena,marka,materijal")] Snowboard snowboard)
+        [Authorize(Roles = "Vlasnik")]
+        public async Task<IActionResult> Edit(int id, double cijena)
         {
-            if (id != snowboard.Id)
+            var snowboard=await _context.Snowboard.FindAsync(id);
+            if (snowboard==null)
             {
                 return NotFound();
             }
@@ -97,6 +104,7 @@ namespace SkyRentifyAplikacija.Controllers
             {
                 try
                 {
+                    snowboard.cijena=cijena;
                     _context.Update(snowboard);
                     await _context.SaveChangesAsync();
                 }
@@ -117,6 +125,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Snowboard/Delete/5
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,6 +146,7 @@ namespace SkyRentifyAplikacija.Controllers
         // POST: Snowboard/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var snowboard = await _context.Snowboard.FindAsync(id);

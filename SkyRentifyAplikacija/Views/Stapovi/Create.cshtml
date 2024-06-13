@@ -4,43 +4,44 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h4>Unesite sljedeće podatke za štapove:</h4>
 
-<h4>Stapovi</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="duzina" class="control-label"></label>
-                <input asp-for="duzina" class="form-control" />
-                <span asp-validation-for="duzina" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cijena" class="control-label"></label>
-                <input asp-for="cijena" class="form-control" />
-                <span asp-validation-for="cijena" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="marka" class="control-label"></label>
-                <input asp-for="marka" class="form-control" />
-                <span asp-validation-for="marka" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="materijal" class="control-label"></label>
-                <input asp-for="materijal" class="form-control" />
-                <span asp-validation-for="materijal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+<div class="form-container">
+    <form asp-action="Create" method="post">
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <label asp-for="duzina" class="control-label"></label>
+            <input asp-for="duzina" class="form-control" placeholder="Unesite dužinu štapova" />
+            <span asp-validation-for="duzina" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="cijena" class="control-label"></label>
+            <input asp-for="cijena" class="form-control" placeholder="Unesite cijenu štapova" />
+            <span asp-validation-for="cijena" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="marka" class="control-label"></label>
+            <input asp-for="marka" class="form-control" placeholder="Unesite marku štapova" />
+            <span asp-validation-for="marka" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="materijal" class="control-label"></label>
+            <input asp-for="materijal" class="form-control" placeholder="Unesite materijal štapova" />
+            <span asp-validation-for="materijal" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Kreiraj štapove</button>
+        </div>
+    </form>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-back">Nazad na listu</a>
 </div>
 
 @section Scripts {

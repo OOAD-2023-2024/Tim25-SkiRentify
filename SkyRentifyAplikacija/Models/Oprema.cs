@@ -18,7 +18,7 @@ namespace SkyRentifyAplikacija.Models
         public string marka { get; set; }
         [Display(Name = "Materijal")]
         [StringLength(50, ErrorMessage = "Polje Materijal ne može biti duže od 50 karaktera.")]
-        [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage = "Dozvoljeni su samo slova.")]
+        [RegularExpression(@"^[a-zA-Z\s\\]*$", ErrorMessage = "Dozvoljena su samo slova i \\.")]
         public string materijal { get; set; }
 
     }

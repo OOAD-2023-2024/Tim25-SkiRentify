@@ -1,47 +1,95 @@
 ﻿@model SkyRentifyAplikacija.Models.Snowboard
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Ažuriranje";
 }
 
-<h1>Edit</h1>
+<style>
+    .form-control::placeholder {
+        color: #495057;
+    }
 
-<h4>Snowboard</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="duzina" class="control-label"></label>
-                <input asp-for="duzina" class="form-control" />
-                <span asp-validation-for="duzina" class="text-danger"></span>
-            </div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="cijena" class="control-label"></label>
-                <input asp-for="cijena" class="form-control" />
-                <span asp-validation-for="cijena" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="marka" class="control-label"></label>
-                <input asp-for="marka" class="form-control" />
-                <span asp-validation-for="marka" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="materijal" class="control-label"></label>
-                <input asp-for="materijal" class="form-control" />
-                <span asp-validation-for="materijal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    h2 {
+        text-align: center;
+        color: darkorange;
+        margin-top: 20px;
+    }
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh; /* Centers vertically on the screen */
+    }
+
+        .form-container form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .control-label {
+        color: darkorange;
+        font-weight: bold;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .btn-primary {
+        background-color: darkorange;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+
+        .btn-primary:hover {
+            background-color: orangered;
+        }
+
+    .text-danger {
+        color: red;
+        font-size: 12px;
+    }
+</style>
+
+<div class="form-container">
+    <form asp-action="Edit">
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <h2>Ažuriraj cijenu</h2>
+            <label asp-for="cijena" class="control-label"></label>
+            <input asp-for="cijena" class="form-control" placeholder="Unesite cijenu" />
+            <span asp-validation-for="cijena" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Spasi cijenu" class="btn btn-primary" />
+        </div>
+    </form>
 </div>
 
 @section Scripts {

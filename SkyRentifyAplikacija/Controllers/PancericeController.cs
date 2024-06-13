@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Pancerice
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Pancerice.ToListAsync());
@@ -44,6 +46,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Pancerice/Create
+        [Authorize(Roles = "Vlasnik")]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +57,7 @@ namespace SkyRentifyAplikacija.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Create([Bind("velicina,Id,cijena,marka,materijal")] Pancerice pancerice)
         {
             if (ModelState.IsValid)
@@ -66,6 +70,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Pancerice/Edit/5
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,6 +91,7 @@ namespace SkyRentifyAplikacija.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Edit(int id,double cijena)
         {
             var pancerice = await _context.Pancerice.FindAsync(id);
@@ -119,6 +125,7 @@ namespace SkyRentifyAplikacija.Controllers
         }
 
         // GET: Pancerice/Delete/5
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -139,6 +146,7 @@ namespace SkyRentifyAplikacija.Controllers
         // POST: Pancerice/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var pancerice = await _context.Pancerice.FindAsync(id);

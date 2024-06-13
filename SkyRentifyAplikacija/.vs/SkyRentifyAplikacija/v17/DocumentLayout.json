@@ -3,60 +3,76 @@
   "WorkspaceRootPath": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\pancerice\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\pancerice\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\controllers\\zahtjevcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:controllers\\zahtjevcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\controllers\\pancericecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:controllers\\pancericecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\zahtjev\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\zahtjev\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\pancerice\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\pancerice\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\zahtjev\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\zahtjev\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\kaciga\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\kaciga\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\controllers\\tipzahtjevacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:controllers\\tipzahtjevacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\kaciga\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\kaciga\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\pancerice\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\pancerice\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\kaciga\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\kaciga\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\skije\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\skije\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\controllers\\stapovicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:controllers\\stapovicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\controllers\\kacigacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:controllers\\kacigacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\tipzahtjeva\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\tipzahtjeva\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\models\\oprema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:models\\oprema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\models\\skije.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:models\\skije.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\controllers\\skijecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:controllers\\skijecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\controllers\\pancericecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:controllers\\pancericecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\controllers\\snowboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:controllers\\snowboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\controllers\\snowboardcipelecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:controllers\\snowboardcipelecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\models\\procesplacanjamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:models\\procesplacanjamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\models\\klijent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:models\\klijent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\models\\zahtjev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:models\\zahtjev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\kaciga\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\kaciga\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\zahtjev\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\zahtjev\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -65,14 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|c:\\users\\korisnik\\documents\\github\\tim25-skirentify\\skyrentifyaplikacija\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B57C4A32-CF0E-4A10-9A3D-3BB401C84008}|SkyRentifyAplikacija.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,193 +90,219 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Pancerice\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Pancerice\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Pancerice\\Create.cshtml",
-              "RelativeToolTip": "Views\\Pancerice\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T02:13:47.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PancericeController.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\PancericeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PancericeController.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\PancericeController.cs",
-              "RelativeToolTip": "Controllers\\PancericeController.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAwwGkAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T02:12:09.542Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Kaciga\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Kaciga\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Kaciga\\Edit.cshtml",
-              "RelativeToolTip": "Views\\Kaciga\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFIAAAAgAAAA",
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Zahtjev\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Zahtjev\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Zahtjev\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Zahtjev\\Delete.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T02:10:55.819Z",
+              "WhenOpened": "2024-06-13T13:08:59.054Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Pancerice\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Pancerice\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Pancerice\\Edit.cshtml",
-              "RelativeToolTip": "Views\\Pancerice\\Edit.cshtml",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAAAF0AAAAGAAAA",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Zahtjev\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Zahtjev\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Zahtjev\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Zahtjev\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T02:10:27.875Z",
+              "WhenOpened": "2024-06-13T13:08:50.193Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Kaciga\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Kaciga\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Kaciga\\Index.cshtml",
-              "RelativeToolTip": "Views\\Kaciga\\Index.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAGsAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T02:01:17.099Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Pancerice\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Pancerice\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Pancerice\\Index.cshtml",
-              "RelativeToolTip": "Views\\Pancerice\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T02:00:50.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Kaciga\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Kaciga\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Kaciga\\Create.cshtml",
-              "RelativeToolTip": "Views\\Kaciga\\Create.cshtml",
-              "ViewState": "AQIAAFgAAAAAAAAAAAAAwGQAAABLAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T01:45:35.253Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Skije\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Skije\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Skije\\Create.cshtml",
-              "RelativeToolTip": "Views\\Skije\\Create.cshtml",
-              "ViewState": "AQIAAFcAAAAAAAAAAAAAAHwAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T01:45:30.124Z",
+              "Title": "StapoviController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\StapoviController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StapoviController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\StapoviController.cs",
+              "RelativeToolTip": "Controllers\\StapoviController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAAJQAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T13:01:48.501Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "KacigaController.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\KacigaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\KacigaController.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\KacigaController.cs",
-              "RelativeToolTip": "Controllers\\KacigaController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAYwGIAAAATAAAA",
+              "Title": "SnowboardController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\SnowboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SnowboardController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\SnowboardController.cs",
+              "RelativeToolTip": "Controllers\\SnowboardController.cs",
+              "ViewState": "AQIAAIwAAAAAAAAAAADwv5QAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T01:39:33.517Z",
+              "WhenOpened": "2024-06-13T12:59:11.047Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Oprema.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Oprema.cs",
-              "RelativeDocumentMoniker": "Models\\Oprema.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Oprema.cs",
-              "RelativeToolTip": "Models\\Oprema.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAAwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T01:38:41.02Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\TipZahtjeva\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\TipZahtjeva\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\TipZahtjeva\\Edit.cshtml",
-              "RelativeToolTip": "Views\\TipZahtjeva\\Edit.cshtml",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAAAFwAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T00:51:15.186Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 6,
               "Title": "SkijeController.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\SkijeController.cs",
               "RelativeDocumentMoniker": "Controllers\\SkijeController.cs",
               "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\SkijeController.cs",
               "RelativeToolTip": "Controllers\\SkijeController.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAgwFoAAAAiAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAwB0AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T00:29:54.875Z",
+              "WhenOpened": "2024-06-13T12:56:48.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PancericeController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\PancericeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PancericeController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\PancericeController.cs",
+              "RelativeToolTip": "Controllers\\PancericeController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwB0AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T12:55:47.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ZahtjevController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\ZahtjevController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ZahtjevController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\ZahtjevController.cs",
+              "RelativeToolTip": "Controllers\\ZahtjevController.cs",
+              "ViewState": "AQIAABkBAAAAAAAAAAAtwEYBAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T11:12:45.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TipZahtjevaController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\TipZahtjevaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TipZahtjevaController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\TipZahtjevaController.cs",
+              "RelativeToolTip": "Controllers\\TipZahtjevaController.cs",
+              "ViewState": "AQIAAJUAAAAAAAAAAADwv5QAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T09:30:47.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SnowboardCipeleController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\SnowboardCipeleController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SnowboardCipeleController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\SnowboardCipeleController.cs",
+              "RelativeToolTip": "Controllers\\SnowboardCipeleController.cs",
+              "ViewState": "AQIAAIwAAAAAAAAAAADwv5MAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T12:57:49.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "KacigaController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\KacigaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\KacigaController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\KacigaController.cs",
+              "RelativeToolTip": "Controllers\\KacigaController.cs",
+              "ViewState": "AQIAAJ8AAAAAAAAAAAAIwB0AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T12:54:07.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAwwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T12:53:59.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Klijent.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Klijent.cs",
+              "RelativeDocumentMoniker": "Models\\Klijent.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Klijent.cs",
+              "RelativeToolTip": "Models\\Klijent.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T12:01:29.902Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Skije.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Skije.cs",
-              "RelativeDocumentMoniker": "Models\\Skije.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Skije.cs",
-              "RelativeToolTip": "Models\\Skije.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAoAAAA",
+              "Title": "ProcesPlacanjaModel.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\ProcesPlacanjaModel.cs",
+              "RelativeDocumentMoniker": "Models\\ProcesPlacanjaModel.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\ProcesPlacanjaModel.cs",
+              "RelativeToolTip": "Models\\ProcesPlacanjaModel.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowCcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T00:30:01.539Z",
+              "WhenOpened": "2024-06-13T11:38:24.135Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAAAFQAAABeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T21:20:22.023Z",
+              "Title": "Zahtjev.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Zahtjev.cs",
+              "RelativeDocumentMoniker": "Models\\Zahtjev.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\Zahtjev.cs",
+              "RelativeToolTip": "Models\\Zahtjev.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAgwC8AAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T11:26:27.452Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIIAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T10:34:55.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Zahtjev\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Zahtjev\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Zahtjev\\Index.cshtml",
+              "RelativeToolTip": "Views\\Zahtjev\\Index.cshtml",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T10:16:40.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -281,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
@@ -289,33 +323,32 @@
               "RelativeToolTip": "Views\\Shared\\_LoginPartial.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T20:53:16.838Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T20:53:16.838Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Register.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAiwHsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T20:47:04.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAACEAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-12T20:46:21.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Kaciga\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Kaciga\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Views\\Kaciga\\Create.cshtml",
+              "RelativeToolTip": "Views\\Kaciga\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T10:48:38.117Z",
               "EditorCaption": ""
             }
           ]
