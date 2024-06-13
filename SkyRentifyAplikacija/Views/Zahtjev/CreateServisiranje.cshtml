@@ -105,6 +105,11 @@
             <input asp-for="datumIzdavanjaUsluge" class="form-control" placeholder="Unesite datum izdavanja usluge" />
             <span asp-validation-for="datumIzdavanjaUsluge" class="text-danger"></span>
         </div>
+        <div class="form-group" style="display:none;">
+            <label asp-for="klijent.visina" class="control-label"></label>
+            <input asp-for="klijent.visina" class="form-control" type="hidden" value="170" />
+            <span asp-validation-for="klijent.visina" class="text-danger"></span>
+        </div>
         <div class="form-group">
             <label asp-for="datumZavrsetkaUsluge" class="control-label"></label>
             <input asp-for="datumZavrsetkaUsluge" class="form-control" placeholder="Unesite datum završetka usluge" />

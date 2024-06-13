@@ -102,7 +102,9 @@ namespace SkyRentifyAplikacija.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,datumPodnosenjaZahtjeva,datumIzdavanjaUsluge,datumZavrsetkaUsluge,KlijentID,klijent,cijena,popust,placeno")] Zahtjev zahtjev)
         {
-            tipZahtjeva= fileHandler.ReadFromFile(putanjaTipZahtjeva);
+            var nivoVjestineTipovi = Enum.GetValues(typeof(Vjestina)).Cast<Vjestina>().ToList();
+            ViewBag.VjestinaTipovi = new SelectList(nivoVjestineTipovi.Select(v => new { Id = (int)v, Name = v.ToString() }), "Id", "Name");
+            tipZahtjeva = fileHandler.ReadFromFile(putanjaTipZahtjeva);
             opcije=fileHandler.ReadFromFile(putanjaOpcijeServisiranja);
             if (ModelState.IsValid)
             {
@@ -175,7 +177,15 @@ namespace SkyRentifyAplikacija.Controllers
                 }
             }
             //ViewData["KlijentId"] = new SelectList(_context.Klijent, "Id", "Id", zahtjev.KlijentId);
-            return View(zahtjev);
+            if(tipZahtjeva.Contains("iznajmljivanje"))
+            {
+                return View("Create",zahtjev);
+            }
+            else
+            {
+                return View("CreateServisiranje",zahtjev);
+            }
+            //return View(zahtjev);
         }
 
         public async Task<IActionResult> PrikazOpreme(int zahtjevId)

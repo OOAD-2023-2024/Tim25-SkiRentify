@@ -14,17 +14,17 @@ namespace SkyRentifyAplikacija.Models
         public DateTime datumPodnosenjaZahtjeva { get; set; }
 
         [DisplayName("Datum izdavanja usluge")]
-        //[FutureDate(ErrorMessage = "Datum izdavanja mora biti u budućnosti")]
+        [FutureDate(ErrorMessage = "Datum izdavanja mora biti u budućnosti")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "Datum izdavanja usluge je obavezan.")]
-        //[ValidDates(ErrorMessage = "Datum izdavanja mora biti veći od današnjeg i manji od datuma završetka.")]
+        [ValidDates(ErrorMessage = "Datum izdavanja mora biti veći od današnjeg i manji od datuma završetka.")]
         public DateTime datumIzdavanjaUsluge { get; set; }
 
         [DisplayName("Datum završetka usluge")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        //[FutureDate(ErrorMessage = "Datum završetka mora biti u budućnosti")]
+        [FutureDate(ErrorMessage = "Datum završetka mora biti u budućnosti")]
         [Required(ErrorMessage = "Datum završetka usluge je obavezan.")]
         public DateTime datumZavrsetkaUsluge { get; set; }
 
@@ -45,7 +45,7 @@ namespace SkyRentifyAplikacija.Models
         public bool placeno { get; set; }
     }
 
-    /*public class ValidDatesAttribute : ValidationAttribute
+    public class ValidDatesAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
@@ -75,5 +75,5 @@ namespace SkyRentifyAplikacija.Models
 
             return new ValidationResult("Neispravan format datuma.");
         }
-    }*/
+    }
 }
