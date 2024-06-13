@@ -208,11 +208,19 @@ namespace SkyRentifyAplikacija.Controllers
                 if(vjestina.ToString() == Vjestina.POCETNIK.ToString()) //pocetnik 180
                 {
                     skije.RemoveAll(s => s.duzina < visina - 30 || s.duzina > visina - 25);
+                    skije.RemoveAll(s => s.sirina == 7 || s.sirina == 8);
                 }
-                else
+                else if (vjestina.ToString() == Vjestina.SREDNJI.ToString()) 
                 {
                     skije.RemoveAll(s => s.duzina < visina - 20 || s.duzina > visina - 15);
+                    skije.RemoveAll(s => s.sirina == 10);
                 }
+                else //napredni
+                {
+                    skije.RemoveAll(s => s.duzina <= visina - 20 || s.duzina >= visina - 15);
+                    skije.RemoveAll(s => s.sirina == 10);
+                }
+
 
             }
             if (odabranaLista.Contains("Pancerice"))
@@ -226,12 +234,16 @@ namespace SkyRentifyAplikacija.Controllers
             if(odabranaLista.Contains("Stapovi"))
             {
                 stapovi = await _context.Stapovi.ToListAsync();
+                stapovi.RemoveAll(s => s.duzina < (int)(visina*0.68) - 5 || s.duzina > (int)(visina * 0.68) + 5);
+                
             }
-            if(odabranaLista.Contains("Snowboard"))
+            if (odabranaLista.Contains("Snowboard"))
             {
                 snowboard = await _context.Snowboard.ToListAsync();
+                snowboard.RemoveAll(s => s.duzina < (int)(visina * 0.9) - 5 || s.duzina > (int)(visina * 0.9) + 5);
+
             }
-            if(odabranaLista.Contains("SnowboardCipele"))
+            if (odabranaLista.Contains("SnowboardCipele"))
             {
                 snowboardCipele = await _context.SnowboardCipele.ToListAsync();
             }
