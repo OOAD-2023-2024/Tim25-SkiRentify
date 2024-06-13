@@ -14,8 +14,8 @@ Mina Duranović 19290<br />
 
 <h3 align="left">Pristup aplikaciji</h3>
 Link: <br />
-Konekcijski string za bazu podataka:<br />
-Pristupni podaci za administratora: <br />
-Pristupni podaci za uposlenika:<br />
+Konekcijski string za bazu podataka: "Data Source=SQL8010.site4now.net;Initial Catalog=db_aa8b96_ooad2024;User Id=db_aa8b96_ooad2024_admin;Password=nekasifra1"<br />
+Pristupni podaci za administratora: Email: akazazovic1@etf.unsa.ba Password: sifraNeka78. <br />
+Pristupni podaci za uposlenika: Email: sabka7@gmail.com  Password: sifraNeka80. <br />
 
 
