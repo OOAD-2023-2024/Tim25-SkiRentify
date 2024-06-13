@@ -1,0 +1,104 @@
+﻿@model IEnumerable<SkyRentifyAplikacija.Models.TipZahtjeva>
+
+@{
+    ViewData["Title"] = "Ažuriranje cijena usluga";
+}
+
+<style>
+    body {
+        background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    .card {
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        border-radius: 10px;
+        overflow: hidden;
+        background: white;
+        margin-top: 50px;
+        margin-right:30px;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .card-text {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .btn-custom {
+        background-color: darkorange;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn-custom:hover {
+            background-color: orange;
+        }
+
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: darkorange;
+    }
+</style>
+
+<h1>Odaberite uslugu koju ažurirate</h1>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        @foreach (var item in Model)
+        {
+            @if (item.cijena != 0)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">                
+                        @if (item.ID == 1)
+                        {
+                            <img class="card-img-top" src="https://i.ibb.co/RTwTGZj/poliranje.jpg" alt="Slika usluge">
+                            <div class="card-body">
+                                <h5 class="card-title">@Html.DisplayFor(modelItem => item.naziv)</h5>
+                                <p class="card-text">Cijena: @Html.DisplayFor(modelItem => item.cijena)</p>
+                                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-custom">Promijeni cijenu</a>
+                            </div>
+                        }else
+                        {
+                            <img class="card-img-top" src="https://i.ibb.co/Lp0LX36/popravak.jpg" alt="Slika usluge">
+                            <div class="card-body">
+                                <h5 class="card-title">@Html.DisplayFor(modelItem => item.naziv)</h5>
+                                <p class="card-text">Cijena: @Html.DisplayFor(modelItem => item.cijena)</p>
+                                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-custom">Promijeni cijenu</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

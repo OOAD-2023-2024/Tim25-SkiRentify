@@ -86,17 +86,19 @@ namespace SkyRentifyAplikacija.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("duzina,sirina,Id,cijena,marka,materijal")] Skije skije)
+        public async Task<IActionResult> Edit(int id, double cijena)
         {
-            if (id != skije.Id)
+            //za azuriranje cijene
+            var skije=await _context.Skije.FindAsync(id);
+            if (skije == null)
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
                 try
                 {
+                    skije.cijena = cijena;
                     _context.Update(skije);
                     await _context.SaveChangesAsync();
                 }

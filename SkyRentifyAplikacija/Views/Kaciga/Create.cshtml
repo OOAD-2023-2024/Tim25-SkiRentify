@@ -1,46 +1,132 @@
 ﻿@model SkyRentifyAplikacija.Models.Kaciga
 
-@{
-    ViewData["Title"] = "Create";
-}
+<style>
 
-<h1>Create</h1>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
-<h4>Kaciga</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="velicina" class="control-label"></label>
-                <input asp-for="velicina" class="form-control" />
-                <span asp-validation-for="velicina" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cijena" class="control-label"></label>
-                <input asp-for="cijena" class="form-control" />
-                <span asp-validation-for="cijena" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="marka" class="control-label"></label>
-                <input asp-for="marka" class="form-control" />
-                <span asp-validation-for="marka" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="materijal" class="control-label"></label>
-                <input asp-for="materijal" class="form-control" />
-                <span asp-validation-for="materijal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+    h4 {
+        text-align: center;
+        color: darkorange;
+        margin-top: 20px;
+    }
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+        .form-container form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .control-label {
+        color: darkorange;
+        font-weight: bold;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .btn-primary {
+        background-color: darkorange;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+
+        .btn-primary:hover {
+            background-color: orangered;
+        }
+
+    .text-danger {
+        color: red;
+        font-size: 12px;
+    }
+
+    .btn-back {
+        display: inline-block;
+        background-color: darkorange;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none; /* Remove underline from anchor tag */
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        .btn-back:hover {
+            background-color: orangered;
+            text-decoration: none; /* Hover effect without underline */
+        }
+</style>
+
+<h4>Unesite sljedeće podatke za kacigu:</h4>
+
+<div class="form-container">
+    <form asp-action="Create" method="post">
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <label asp-for="velicina" class="control-label"></label>
+            <select asp-for="velicina" class="form-control">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <span asp-validation-for="velicina" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="cijena" class="control-label"></label>
+            <input asp-for="cijena" class="form-control" placeholder="Unesite cijenu kacige" />
+            <span asp-validation-for="cijena" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="marka" class="control-label"></label>
+            <input asp-for="marka" class="form-control" placeholder="Unesite marku kacige" />
+            <span asp-validation-for="marka" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="materijal" class="control-label"></label>
+            <input asp-for="materijal" class="form-control" placeholder="Unesite materijal kacige" />
+            <span asp-validation-for="materijal" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Kreiraj kacigu</button>
+        </div>
+    </form>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-back">Nazad na listu</a>
 </div>
 
 @section Scripts {

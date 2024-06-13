@@ -19,6 +19,14 @@
         .btn-container {
             display: flex;
             justify-content: center;
+            flex-direction: column; 
+            align-items: center
+        }
+
+        .btn-row {
+            display: flex; /* Postavlja unutrašnje elemente u red */
+            justify-content: center; /* Centrira horizontalno */
+            margin-bottom: 5px; /* Prostor između redova buttona */
         }
 
         .text-orange {
@@ -61,7 +69,44 @@
         });
     </script>
 </head>
-<body>
+@if (User.IsInRole("Vlasnik"))
+{
+
+    <body>
+        <div class="text-center mt-5">
+            <h1 class="display-4 text-orange">SkiRentify - Vaš skijaški san sa<br>nama postaje stvarnost</h1>
+
+            <div class="btn-container">
+                <div class="btn-row">
+                <form id="pregledZahtjevaForm" method="" action="/Zahtjev/Index">
+                    <button type="submit" class="btn btn-warning btn-custom">Pregled zahtjeva</button>
+                </form>
+
+                <form id="azuriranjeCijenaOpremaForm" method="" action="/Home/OpremaAzuriranje">
+                    <button type="submit" class="btn btn-warning btn-custom">Ažuriranje cijena opreme</button>
+                </form>
+                </div>
+
+                <div class="btn-row">
+                <form id="azuriranjeCijenaUslugaForm" method="" action="/TipZahtjeva/Index">
+                    <button type="submit" class="btn btn-warning btn-custom">Ažuriranje cijena usluga</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </body>
+}
+else if (User.IsInRole("Uposlenik"))
+{
+    <body>
+        <div class="text-center mt-5">
+            <h1 class="display-4 text-orange">SkiRentify - Vaš skijaški san sa<br>nama postaje stvarnost</h1>
+        </div>
+    </body>
+}
+else
+{
+    <body>
     <div class="text-center mt-5">
         <h1 class="display-4 text-orange">SkiRentify - Vaš skijaški san sa<br>nama postaje stvarnost</h1>
 
@@ -85,4 +130,5 @@
         </div>
     </div>
 </body>
+}
 </html>

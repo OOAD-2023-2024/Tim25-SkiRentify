@@ -61,6 +61,11 @@ namespace SkyRentifyAplikacija.Controllers
             return View();
         }
 
+        public IActionResult OpremaAzuriranje()
+        {
+            return View("OdabirOpremeZaAzuriranje");
+        }
+
         /*public IActionResult Iznajmljivanje()
         {
             return View();

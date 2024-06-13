@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewData["Title"] = "Ažuriranje opreme";
+}
+
+<style>
+    body {
+        background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .card {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        max-width: 100%;
+        display: flex;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 20px;
+        text-align: center;
+        background-color: seashell;
+    }
+
+    .card-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .card-text {
+        margin-bottom: 15px;
+    }
+
+    .btn-custom {
+        background-color: darkorange;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn-custom:hover {
+            background-color: orange;
+        }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: darkorange;
+        margin-top: 30px;
+    }
+</style>
+
+<h1>Odaberite opremu koju ažurirate</h1>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="https://i.ibb.co/jJgFLgv/skije.jpg" alt="Slika opreme">
+                <div class="card-body">
+                    <h5 class="card-title">Skije</h5>
+                    <a href="@Url.Action("Index", "Skije")" class="btn btn-custom">Odaberi</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="https://i.ibb.co/7SHJBPn/pancerice.jpg" alt="Slika opreme">
+                <div class="card-body">
+                    <h5 class="card-title">Pancerice</h5>
+                    <a href="@Url.Action("Index", "Pancerice")" class="btn btn-custom">Odaberi</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="https://i.ibb.co/WGNG5cD/kaciga.jpg" alt="Slika opreme">
+                <div class="card-body">
+                    <h5 class="card-title">Kacige</h5>
+                    <a href="@Url.Action("Index", "Kaciga")" class="btn btn-custom">Odaberi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="https://i.ibb.co/9cXyHLm/stapovi.jpg" alt="Slika opreme">
+                <div class="card-body">
+                    <h5 class="card-title">Štapovi</h5>
+                    <a href="@Url.Action("Index", "Stapovi")" class="btn btn-custom">Odaberi</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="https://i.ibb.co/zGwCZ77/snowboard.png" alt="Slika opreme">
+                <div class="card-body">
+                    <h5 class="card-title">Snowboard</h5>
+                    <a href="@Url.Action("Index", "Snowboard")" class="btn btn-custom">Odaberi</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="https://i.ibb.co/6bH9W4m/snowboard-cizme.jpg" alt="Slika opreme">
+                <div class="card-body">
+                    <h5 class="card-title">Snowboard cipele</h5>
+                    <a href="@Url.Action("Index", "SnowboardCipele")" class="btn btn-custom">Odaberi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

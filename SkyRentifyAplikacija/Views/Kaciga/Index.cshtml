@@ -1,53 +1,144 @@
 ﻿@model IEnumerable<SkyRentifyAplikacija.Models.Kaciga>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Prikaz kaciga";
 }
 
-<h1>Index</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+            background-repeat: repeat;
+            background-size: cover;
+        }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.velicina)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.cijena)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.marka)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.materijal)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.velicina)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cijena)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.marka)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.materijal)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: darkorange;
+        }
+
+        .btn-primary {
+            background-color: darkorange;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 30%;
+            font-size: 16px;
+            align-items: center;
+            align-content: center;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+            .btn-primary:hover {
+                background-color: orangered;
+            }
+
+        table {
+            background: seashell;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        th {
+            background: darkorange;
+            color: black;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: darkorange;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+
+            .btn:hover {
+                background-color: orangered;
+            }
+
+        .btn-warning {
+            background-color: darkorange;
+            color: white;
+            border-color: darkorange;
+        }
+
+            .btn-warning:hover {
+                background-color: orangered;
+                border-color: orangered;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Odabir kacige za ažuriranje</h1>
+
+        <div class="btn-container">
+            <a asp-action="Create" class="btn btn-primary">Dodaj novu kacigu</a>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.cijena)</th>
+                    <th>@Html.DisplayNameFor(model => model.marka)</th>
+                    <th>@Html.DisplayNameFor(model => model.materijal)</th>
+                    <th>@Html.DisplayNameFor(model => model.velicina)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.cijena)</td>
+                        <td>@Html.DisplayFor(modelItem => item.marka)</td>
+                        <td>@Html.DisplayFor(modelItem => item.materijal)</td>
+                        <td>@Html.DisplayFor(modelItem => item.velicina)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Promijeni cijenu</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

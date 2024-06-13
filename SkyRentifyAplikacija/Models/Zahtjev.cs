@@ -22,13 +22,18 @@ namespace SkyRentifyAplikacija.Models
         public DateTime datumZavrsetkaUsluge { get; set; }
 
         [ForeignKey("Klijent")]
+        [DisplayName("Klijent")]
         public int KlijentId { get; set; }
+        [DisplayName("Klijent")]
 
         public Klijent klijent { get; set; }
+        [DisplayName("Cijena")]
 
         public double cijena { get; set; }
+        [DisplayName("Popust")]
 
         public double popust { get; set; }
+        [DisplayName("Plaćeno")]
 
         public bool placeno { get; set; }
     }
