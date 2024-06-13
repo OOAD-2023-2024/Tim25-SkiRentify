@@ -101,10 +101,6 @@
                         <td>@Html.DisplayFor(modelItem => item.popust)</td>
                         <td>@Html.DisplayFor(modelItem => item.placeno)</td>
                         <td>
-                            @if (User.IsInRole("Vlasnik"))
-                            {
-                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Uredi</a>
-                            }
                             <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Detalji</a>
                             <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Izbriši</a>
                         </td>
@@ -114,4 +110,7 @@
         </table>
     </div>
 </body>
+<div>
+    <a asp-action="Index" asp-controller="Home">Back to Home</a>
+</div>
 </html>

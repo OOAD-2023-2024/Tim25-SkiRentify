@@ -49,9 +49,9 @@ namespace SkyRentifyAplikacija.Controllers
             else if (isEmployee)
             {
                 // Filtriraj i sortiraj za uposlenika
-                //prikazat zahtjeve koji se mogu izdat danas il kasnije
+                //prikazat zahtjeve koji se mogu izdat danas
                 zahtjevi = zahtjevi
-                    .Where(z => z.datumIzdavanjaUsluge.Date >= today)
+                    .Where(z => z.datumIzdavanjaUsluge.Date == today)
                     .OrderByDescending(z => z.datumPodnosenjaZahtjeva);
             }
 
@@ -320,6 +320,7 @@ namespace SkyRentifyAplikacija.Controllers
 
 
         // GET: Zahtjev/Edit/5
+        /*
         [Authorize(Roles = "Vlasnik")]
         public async Task<IActionResult> Edit(int? id)
         {
@@ -336,14 +337,14 @@ namespace SkyRentifyAplikacija.Controllers
             ViewData["KlijentId"] = new SelectList(_context.Klijent, "Id", "Id", zahtjev.KlijentId);
             return View(zahtjev);
         }
-
+        */
         // POST: Zahtjev/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        /*[HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Vlasnik")]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,datumPodnosenjaZahtjeva,datumIzdavanjaUsluje,datumZavrsetkaUsluge,KlijentId,cijena,popust,placeno")] Zahtjev zahtjev)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,datumPodnosenjaZahtjeva,datumIzdavanjaUsluge,datumZavrsetkaUsluge,KlijentId,cijena,popust,placeno")] Zahtjev zahtjev)
         {
             if (id != zahtjev.Id)
             {
@@ -372,7 +373,7 @@ namespace SkyRentifyAplikacija.Controllers
             }
             ViewData["KlijentId"] = new SelectList(_context.Klijent, "Id", "Id", zahtjev.KlijentId);
             return View(zahtjev);
-        }
+        }*/
 
         // GET: Zahtjev/Delete/5
         [Authorize(Roles = "Vlasnik, Uposlenik")]

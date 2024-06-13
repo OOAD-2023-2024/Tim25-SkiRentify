@@ -6,69 +6,98 @@
 
 <style>
     body {
-       font-family: Arial, Helvetica, sans-serif;
-       margin: 0;
-       background-image: url('https: //i.ibb.co/wpCmNF9/plava-pozadina.jpg');
-       background-repeat: no-repeat;
-       background-size: cover;
-       }
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-image: url('https://i.ibb.co/wpCmNF9/plava-pozadina.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h1 {
+        text-align: center;
+        color: darkorange;
+        margin-top: 20px;
+    }
+
+    .details-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 70vh;
+    }
+
+    .details-card {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 600px;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+        .details-card dl {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .details-card dt {
+            width: 30%;
+            color: darkorange;
+            font-weight: bold;
+        }
+
+        .details-card dd {
+            width: 70%;
+            margin-left: 0;
+        }
+
+    .back-link {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .back-link a {
+            color: darkorange;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            .back-link a:hover {
+                color: orangered;
+            }
 </style>
 
-<h1>Details</h1>
+<h1>Detalji zahtjeva</h1>
 
-<div>
-    <h4>Zahtjev</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.datumPodnosenjaZahtjeva)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.datumPodnosenjaZahtjeva)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.datumIzdavanjaUsluge)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.datumIzdavanjaUsluge)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.datumZavrsetkaUsluge)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.datumZavrsetkaUsluge)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.klijent)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.klijent.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cijena)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cijena)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.popust)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.popust)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.placeno)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.placeno)
-        </dd>
-    </dl>
+<div class="details-container">
+    <div class="details-card">
+        <dl>
+            <dt>Datum podnošenja zahtjeva</dt>
+            <dd>@Html.DisplayFor(model => model.datumPodnosenjaZahtjeva)</dd>
+
+            <dt>Datum izdavanja usluge</dt>
+            <dd>@Html.DisplayFor(model => model.datumIzdavanjaUsluge)</dd>
+
+            <dt>Datum završetka usluge</dt>
+            <dd>@Html.DisplayFor(model => model.datumZavrsetkaUsluge)</dd>
+
+            <dt>Klijent</dt>
+            <dd>@Html.DisplayFor(model => model.klijent.Id)</dd>
+
+            <dt>Cijena</dt>
+            <dd>@Html.DisplayFor(model => model.cijena)</dd>
+
+            <dt>Popust</dt>
+            <dd>@Html.DisplayFor(model => model.popust)</dd>
+
+            <dt>Plaćeno</dt>
+            <dd>@Html.DisplayFor(model => model.placeno)</dd>
+        </dl>
+    </div>
 </div>
-<div>
-    @if (User.IsInRole("Vlasnik"))
-    {
-        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
-        <a asp-action="Index">Back to List</a>
-    }
-    
+
+<div class="back-link">
+    <a asp-action="Index">Nazad na listu</a>
 </div>
