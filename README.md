@@ -13,7 +13,7 @@ Sara Dautbegović 19463<br />
 Mina Duranović 19290<br />
 
 <h3 align="left">Pristup aplikaciji</h3>
-Link: https://win8101.site4now.net:8172/MsDeploy.axd?site=kazaz47-001-site1 <br />
+Link: https://win8101.site4now.net:8172/MsDeploy.axd?site=kazaz47-001-site1 ili kazaz47-001-site1.gtempurl.com<br />
 Username: 11176854 <br />
 Password: 60-dayfreetrial <br />
 Konekcijski string za bazu podataka: "Data Source=SQL8010.site4now.net;Initial Catalog=db_aa8b96_ooad2024;User Id=db_aa8b96_ooad2024_admin;Password=nekasifra1"<br />
