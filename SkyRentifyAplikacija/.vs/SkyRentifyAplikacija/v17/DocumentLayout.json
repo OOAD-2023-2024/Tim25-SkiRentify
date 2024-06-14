@@ -134,8 +134,7 @@
               "RelativeToolTip": "Views\\Home\\AboutUs.cshtml",
               "ViewState": "AQIAAGAAAAAAAAAAAAAAAGcAAABrAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T23:57:16.028Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T23:57:16.028Z"
             },
             {
               "$type": "Document",
@@ -183,8 +182,7 @@
               "RelativeToolTip": "Views\\Zahtjev\\Create.cshtml",
               "ViewState": "AQIAADYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T19:01:48.476Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T19:01:48.476Z"
             },
             {
               "$type": "Document",
@@ -196,8 +194,7 @@
               "RelativeToolTip": "Controllers\\ZahtjevController.cs",
               "ViewState": "AQIAAPYBAAAAAAAAAAAqwAICAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T11:12:45.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T11:12:45.497Z"
             },
             {
               "$type": "Document",
@@ -207,7 +204,7 @@
               "RelativeDocumentMoniker": "Models\\ProcesPlacanjaModel.cs",
               "ToolTip": "C:\\Users\\Korisnik\\Documents\\GitHub\\Tim25-SkiRentify\\SkyRentifyAplikacija\\Models\\ProcesPlacanjaModel.cs",
               "RelativeToolTip": "Models\\ProcesPlacanjaModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAvAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAgwB0AAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T11:38:24.135Z",
               "EditorCaption": ""
@@ -222,8 +219,7 @@
               "RelativeToolTip": "Models\\Klijent.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAAwBAAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T12:01:29.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T12:01:29.902Z"
             },
             {
               "$type": "Document",
@@ -235,8 +231,7 @@
               "RelativeToolTip": "Views\\Zahtjev\\ProcesPlacanja.cshtml",
               "ViewState": "AQIAAFQAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-14T00:01:18.097Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-14T00:01:18.097Z"
             },
             {
               "$type": "Document",
