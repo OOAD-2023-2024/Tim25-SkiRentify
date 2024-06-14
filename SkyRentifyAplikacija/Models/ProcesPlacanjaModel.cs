@@ -14,6 +14,8 @@
         public string BrojKartice { get; set; }
 
         [Required(ErrorMessage = "Unesite ime")]
+        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Dozvoljeno je samo korištenje " +
+        "velikih i malih slova.")]
         [Display(Name = "Ime na kartici")]
         public string Ime { get; set; }
 

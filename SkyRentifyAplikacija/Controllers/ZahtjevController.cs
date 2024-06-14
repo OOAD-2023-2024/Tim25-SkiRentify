@@ -11,6 +11,7 @@ using System.IO;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using System.Runtime.Intrinsics.X86;
 
 namespace SkyRentifyAplikacija.Controllers
 {
@@ -479,6 +480,7 @@ namespace SkyRentifyAplikacija.Controllers
         [HttpPost]
         public async Task<IActionResult> ProcesPlacanja(ProcesPlacanjaModel model)
         {
+            var popust = 0.0;
             if (ModelState.IsValid)
             {
                 //ovdje na osnovu broja dana izracunati popust i primijeniti na cijenu
@@ -487,12 +489,34 @@ namespace SkyRentifyAplikacija.Controllers
                 {
                     return NotFound();
                 }
+                var dani = zahtjev.datumZavrsetkaUsluge - zahtjev.datumIzdavanjaUsluge;
+                var dan = dani.Days;
+                if (dan > 5 && dan < 10)
+                {
+                    popust = 0.1;
+                }
+                else if (dan > 10)
+                {
+                    popust = 0.2;
+                }
+                ViewBag.Popust = popust * 100;
                 zahtjev.placeno = true;
                 _context.Update(zahtjev);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("UspjesnoPlacanje", new { zahtjevId = model.ZahtjevId });
             }
-
+            var z = _context.Zahtjev.Find(model.ZahtjevId);
+            var days = z.datumZavrsetkaUsluge - z.datumIzdavanjaUsluge;
+            var day = days.Days;
+            if (day > 5 && day < 10)
+            {
+                popust = 0.1;
+            }
+            else if (day > 10)
+            {
+                popust = 0.2;
+            }
+            ViewBag.Popust = popust * 100;
             // Ako postoji greška u validaciji, ponovo prikazati formu
             return View(model);
         }
